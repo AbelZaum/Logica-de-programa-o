@@ -1,0 +1,39 @@
+package aula_08_03;
+
+import java.util.Scanner;
+
+public class Pessoa_exercicio {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        byte idade = 0;
+
+        float altura = 0f;
+
+        char sexo;
+
+        float salario;
+
+        System.out.print("Informe aqui a sua idade: ");
+        idade = sc.nextByte();
+
+        System.out.println("A sua idade é de: " + idade + " anos ");
+
+        System.out.print("Informe a sua altura: ");
+        altura = sc.nextFloat();
+
+        System.out.println("A sua altura é de: " + altura);
+
+        System.out.print("Informe o seu sexo: ");
+        sexo = sc.next().charAt(0);
+
+        System.out.println("O seu sexo é: " + sexo);
+
+        System.out.print("Informe o seu salario: ");
+        salario = sc.nextFloat();
+
+        System.out.println("O seu salario é de: " + salario);
+
+    }
