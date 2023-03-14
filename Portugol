@@ -1,0 +1,172 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+      real nota1, nota2, nota3, nota4, nota5
+      real nota6, nota7, nota8, nota9, nota10
+      real nota11, nota12, nota13, nota14, nota15
+      real nota16, nota17, nota18, nota19, nota20
+      real nota21, nota22, nota23, nota24, nota25
+      real media1, media2, media3, media4, media5
+      cadeia nome1, nome2, nome3, nome4, nome5
+      
+      escreva ("Digita o seu nome: ")
+      leia (nome1)
+
+      escreva ("\nDigite a sua primeira nota: ")
+      leia (nota1)
+
+      escreva ("\nDigite a sua segunda nota: ")
+      leia (nota2)
+
+      escreva ("\nDigite a sua terceira nota: ")
+      leia (nota3)
+
+      escreva ("\nDigite a sua quarta nota: ")
+      leia (nota4)
+
+      escreva("\nDigite a sua quinta nota: ")
+      leia (nota5)
+
+      
+      escreva ("\nDigita o seu nome: ")
+      leia (nome2)
+
+      escreva ("\nDigite a sua primeira nota: ")
+      leia (nota6)
+
+      escreva ("\nDigite a sua segunda nota: ")
+      leia (nota7)
+
+      escreva ("\nDigite a sua terceira nota: ")
+      leia (nota8)
+
+      escreva ("\nDigite a sua quarta nota: ")
+      leia (nota9)
+
+      escreva("\nDigite a sua quinta nota: ")
+      leia (nota10)
+
+      
+      escreva ("\nDigita o seu nome: ")
+      leia (nome3)
+
+      escreva ("\nDigite a sua primeira nota: ")
+      leia (nota11)
+
+      escreva ("\nDigite a sua segunda nota: ")
+      leia (nota12)
+
+      escreva ("\nDigite a sua terceira nota: ")
+      leia (nota13)
+
+      escreva ("\nDigite a sua quarta nota: ")
+      leia (nota14)
+
+      escreva("\nDigite a sua quinta nota: ")
+      leia (nota15)
+      
+
+
+      escreva ("\nDigita o seu nome: ")
+      leia (nome4)
+
+      escreva ("\nDigite a sua primeira nota: ")
+      leia (nota16)
+
+      escreva ("\nDigite a sua segunda nota: ")
+      leia (nota17)
+
+      escreva ("\nDigite a sua terceira nota: ")
+      leia (nota18)
+
+      escreva ("\nDigite a sua quarta nota: ")
+      leia (nota19)
+
+      escreva("\nDigite a sua quinta nota: ")
+      leia (nota20)
+
+
+
+      escreva ("\nDigita o seu nome: ")
+      leia (nome5)
+
+      escreva ("\nDigite a sua primeira nota: ")
+      leia (nota21)
+
+      escreva ("\nDigite a sua segunda nota: ")
+      leia (nota22)
+
+      escreva ("\nDigite a sua terceira nota: ")
+      leia (nota23)
+
+      escreva ("\nDigite a sua quarta nota: ")
+      leia (nota24)
+
+      escreva("\nDigite a sua quinta nota: ")
+      leia (nota25)
+
+
+      escreva ("Aluno 1: " + nome1)
+
+      media1 = (nota1 + nota2 + nota3 + nota4 + nota5) /5
+     
+     se  (media1 >= 7)
+       escreva (", media: " + media1 + ", Esta Aprovado!")
+
+
+     senao 
+          escreva (", media: " + media1 + ", Esta Reprovado!")   
+
+      
+       escreva ("\nAluno 2: " + nome2)
+
+       media2 = (nota6 + nota7 + nota8 + nota9 + nota10) /5
+
+       se  (media2 >= 7)
+         escreva (", media: " + media2 + ", Esta Aprovado!") 
+
+       senao
+         escreva (", media: " + media2 + ", Esta Reprovado!")     
+
+    
+         escreva ("\nAluno 3: " + nome3)
+        
+         media3 = (nota11 + nota12 + nota13 + nota14 + nota15) /5
+     
+     se  (media3 >= 7)
+       escreva (", media: " + media3 + ", Esta Aprovado!") 
+
+
+     senao
+     escreva (", media : " + media3 + ", Esta Reprovado!")
+           
+      
+        escreva ("\nAluno 4: " + nome4)
+        
+         media4 = (nota16 + nota17+ nota18 + nota19 + nota20) /5
+     
+     se (media4 >= 7)
+       escreva (", media: " + media4 + ", Esta Aprovado!")
+     
+     senao 
+          escreva (", media: " + media4 + ", Esta Reprovado!")
+   
+      
+        escreva ("\nAluno 5: " + nome5)
+        
+         media5 = (nota21 + nota22+ nota23 + nota24+ nota25) /5
+     
+     se (media5 >= 7)
+       escreva (", media: " + media5 + ", Esta Aprovado!") 
+
+
+     senao 
+          escreva (", media: " + media5 + ", Esta Reprovado!")
+        
+
+	
+	}
+}
