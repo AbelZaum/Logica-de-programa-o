@@ -1,0 +1,76 @@
+
+package aula_08_03;
+
+import java.util.Scanner;
+
+public class Calculo {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int num1, num2, soma;
+        
+        System.out.println("Informe o valor do num1: ");
+        num1 = sc.nextInt();
+        
+        System.out.println("informe o valor do num2: ");
+        num2 = sc.nextInt();
+        
+        soma = num1 + num2;
+        
+        System.out.println(" A soma dos numeros: " + soma);
+                
+        int num3, num4, subtracao;
+        
+        System.out.println("Informe um valor: ");
+        num3 = sc.nextInt();
+        
+        System.out.println("Informe o outro valor: ");
+        num4 = sc.nextInt();
+        
+        subtracao = num3 - num4;
+        
+        System.out.println("A subtração dos numeros: " + subtracao);
+        
+        int num5, num6, multiplicacao;
+        
+        System.out.println("Informe um valor aqui: ");
+        num5 = sc.nextInt();
+        
+        System.out.println("Informe outro valor aqui: ");
+        num6 = sc.nextInt();
+        
+        multiplicacao = num5 * num6;
+        
+        System.out.println("A multiplicação dos numeros: " + multiplicacao);
+        
+        float num7, num8, divisao;
+        
+        System.out.println("Informe um numero: ");
+        num7 = sc.nextFloat();
+        
+        System.out.println("Informe outro numero: ");
+        num8 = sc.nextFloat();
+        
+        divisao = num7 / num8;
+        
+        System.out.println("A divisão dos numeros: " + divisao);
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        sc.close();
+        
+    }
+}
