@@ -1,0 +1,52 @@
+programa
+{
+	
+	funcao inicio()
+	{
+    
+     cadeia produto1, produto2, produto3, resposta
+     real produtovalor, valordesconto, percentual, percentual1, produtovalor1, produtovalor2, percentual2
+
+     escreva ("Informe o nome do primeiro produto: ")
+     leia (produto1)
+
+     escreva ("Qual o valor do produto escolhido R$: ")
+     leia (produtovalor)
+     
+     escreva ("Percentual de desconto do produto: ")
+     leia (percentual)
+
+     
+     escreva ("Deseja informar o segundo produto?: ")
+     leia (produto2)
+
+       se (produto2 == "sim") {
+     
+     escreva ("Informe o nome do segundo produto: ")
+     leia (produto2)
+     
+     escreva ("Qual o valor do produto escolhido R$: ")
+     leia (produtovalor1)
+     
+     escreva ("Percentual de desconto do produto: ")
+     leia (percentual1) 
+     
+     escreva ("Deseja informar o terceiro produto?: ")
+     leia (produto3) 
+
+      se (produto3 == "sim") {
+     
+     escreva ("Informe o nome do terceiro produto: ")
+     leia (produto3)
+     
+     escreva ("Qual o valor do produto escolhido R$: ")
+     leia (produtovalor2)
+     
+     escreva ("Percentual de desconto do produto: ")
+     leia (percentual2) }
+     }
+       
+      
+	
+	}
+}
