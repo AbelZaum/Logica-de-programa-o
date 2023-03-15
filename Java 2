@@ -1,0 +1,43 @@
+package operadoresaritmeticos;
+
+import java.util.Scanner;
+
+public class OperadoresAritmeticos {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int num1, num2, soma;
+        float num3, num4;
+        
+        System.out.print("informe um valor para o num1: ");
+        num1 = sc.nextInt();
+
+        System.out.print("informe o valor para o num2: ");
+        num2 = sc.nextInt();
+
+        soma = num1 + num2;
+            
+        System.out.println("a soma do " + num1 + " + " + num2 + " = " + soma);
+        System.out.println("a subtração do " + num1 + " - " + num2 + " = " + (num1 - num2));
+        System.out.println("a multiplicação do " + num1 + " * " + num2 + " = " + (num1 * num2));
+        System.out.println("a divisao do " + num1 + " / " + num2 + " = " + (num1 / num2));
+  
+        System.out.print("informe um valor para o num3: ");
+        num3 = sc.nextFloat();
+        System.out.print("informe um valor para o num 4: ");
+        num4 = sc.nextFloat();
+       
+        System.out.println("a soma do " + num3 + " + " + num4 + " = " + (num3 + num4) );
+        System.out.println("a subtração " + num3 + " - " + num4 + " = " + (num3 - num4));
+        System.out.println("a multiplicação " + num3 + " * " + num4 + " = " + (num3 * num4));
+        System.out.println("a divisao " + num3 + " / " + num4 + " = " + (num3 / num4));
+        
+        
+        sc.close();
+
+        
+    }
+
+}
