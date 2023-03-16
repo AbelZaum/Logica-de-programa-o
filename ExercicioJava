@@ -1,0 +1,27 @@
+package operadoresaritmeticos;
+
+import java.util.Scanner;
+
+public class ExercicioAritmeticos {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int numero1;
+        int sucessor, antecessor;
+
+        System.out.print("Digite um numero: ");
+        numero1 = sc.nextInt();
+
+        sucessor = numero1 - 1;
+        antecessor = numero1 + 1;
+
+        System.out.println("O sucessor do " + numero1 + " = " + sucessor);
+        System.out.println("O antecessor do " + numero1 + " = " + antecessor);
+
+        
+        sc.close();
+    }
+
+}
