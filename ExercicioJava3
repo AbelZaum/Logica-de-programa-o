@@ -1,0 +1,33 @@
+
+package operadoresaritmeticos;
+
+import java.util.Scanner;
+
+
+public class ExercicioAritmeticos3 {
+ 
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner (System.in);
+        
+        short idade, anos, meses, dias;
+        
+        System.out.print("Qual a sua idade em anos: ");
+        anos = sc.nextShort();
+      
+        System.out.print("Meses: ");
+        meses = sc.nextShort();
+        
+        System.out.print("Dias: ");
+        dias = sc.nextShort();
+        
+        System.out.println("Sua idade em dias é: " + (anos * 365) + (meses * 30 + dias));
+        
+        
+                
+       sc.close();
+        
+        
+    }
+    
+}
