@@ -1,0 +1,29 @@
+
+package operadoresaritmeticos;
+
+import java.util.Scanner;
+
+
+public class ExercicioAritmeticos2 {
+    
+     public static void main(String[] args) {
+        
+        Scanner sc = new Scanner (System.in); 
+         
+         float salariominimo, salariousuario, numerodesalarios;
+        
+         
+         salariominimo = 1302.00f;
+         
+         System.out.print("Digite o seu salario: ");
+         salariousuario = sc.nextFloat();
+         
+         numerodesalarios = salariousuario / salariominimo;
+         
+         System.out.println("Salario minimo: " + salariominimo);
+         System.out.println("Salario da pessoa : " + salariousuario);
+         System.out.println("A pessoa recebe: " + numerodesalarios + " salario minimo");         
+         
+        
+    }
+}
