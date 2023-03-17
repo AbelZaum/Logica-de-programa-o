@@ -1,0 +1,41 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+      inteiro numero1 = 0, numero2 = 0, numero3 = 0, numero4 = 0, numero5 = 0
+      
+      inteiro maior = 0
+      
+      escreva ("Fale o primeiro numero: ")
+      leia (numero1)
+      escreva ("Fale o segundo numero: ")
+      leia (numero2)
+      escreva ("Fale o terceiro numero: ")
+      leia (numero3)
+      escreva ("Fale o quarto numero: ")
+      leia (numero4)
+      escreva ("Fale o quinto numero: ")
+      leia (numero5)
+
+          se (numero1 > maior)
+        	maior = numero1
+
+        	se (numero2 > maior)
+        	maior = numero2
+
+        	se (numero3 > maior)
+        	maior = numero3
+
+        	se (numero4 > maior)
+        	maior = numero4
+
+        	se (numero5 > maior)
+        	maior = numero5
+
+        	escreva (maior)
+	 
+
+	}
+}
