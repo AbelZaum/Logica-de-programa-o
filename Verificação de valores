@@ -1,0 +1,107 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+ 	  cadeia destino1, destino2, destino3, origem1, origem2, origem3, impressao1 ="", impressao2=""
+ 	  real distancia1 = 0.0, distancia2 = 0.0, distancia3 = 0.0
+ 	  real valor1 = 0.0, valor2 = 0.0, valor3 = 0.0
+       real menorvalor = 0.0, distancia = 0.0, viagem_menor = 0.0, maiordistancia = 0.0
+       
+ 	  escreva ("Origem da primeira viagem : ")
+ 	  leia (origem1)
+ 	  										
+ 	  escreva ("Destino: ")
+ 	  leia (destino1)
+
+ 	  escreva ("Distancia em quilometros: ")
+ 	  leia (distancia1)
+
+ 	  escreva ("Valor em reais: ")
+ 	  leia (valor1)
+//---------------------------------------
+ 	   escreva ("Origem da segunda viagem: ")
+ 	  leia (origem2)
+ 	  
+ 	  escreva ("Destino: ")
+ 	  leia (destino2)
+
+ 	  escreva ("Distancia em quilometros: ")
+ 	  leia (distancia2)
+
+ 	  escreva ("Valor em reais: ")
+ 	  leia (valor2)
+//---------------------------------------
+ 	   escreva ("Origem da terceira viagem: ")
+ 	  leia (origem3)
+ 	  
+ 	  escreva ("Destino: ")
+ 	  leia (destino3)
+
+ 	  escreva ("Distancia em quilometros: ")
+ 	  leia (distancia3)
+
+ 	  escreva ("Valor em reais: ")
+ 	  leia (valor3)
+//---------------------------------------
+       
+         menorvalor = valor1
+	    viagem_menor = 1.0
+
+	      
+	  se (valor2 < menorvalor) {
+	  	 menorvalor = valor2
+        	viagem_menor = 2.0
+        }
+        
+	   	se (valor3 < menorvalor){
+	   		menorvalor = valor3
+          	viagem_menor = 3.0
+	   }
+
+	   
+	   	se (viagem_menor == 1.0) 
+	   		impressao1 = "Origem " + origem1 + " Destino " + destino1 + " Distancia " + distancia1 + " Valor " + valor1
+	   
+	   	se (viagem_menor == 2.0)
+        		impressao1 = "Origem " + origem2 + " Destino " + destino2+ " Distancia " + distancia2 + " Valor " + valor2
+	   
+	   	se (viagem_menor == 3.0)
+	   		impressao1 = "Origem " + origem3 + " Destino " + destino3 + " Distancia " + distancia3 + " Valor " + valor3
+
+
+       	 escreva ("\nViagem de menor valor: " + impressao1)
+	   	
+
+//----------------------------------------
+
+  
+	   	distancia = distancia1  
+	   	maiordistancia = 1.0
+	   
+	   	se (distancia2 > distancia) {
+	   		distancia = distancia2
+	   		maiordistancia = 2.0
+	   }
+	   
+	   	se (distancia3 > distancia) {
+	   		distancia = distancia3
+	   		maiordistancia = 3.0
+	   }  
+ 	
+          se (maiordistancia == 1.0)
+	   		impressao2 = "Origem " + origem1 + " .Destino " + destino1 + " .Distancia " + distancia1 + " .Valor " + valor1
+	   
+	   	se (maiordistancia == 2.0)
+        		impressao2 = "Origem " + origem2 + " .Destino " + destino2+ " .Distancia " + distancia2 + " .Valor " + valor2
+	   
+	   	se (maiordistancia == 3.0)
+	   		impressao2 = "Origem " + origem1 + " .Destino " + destino1 + " .Distancia " + distancia1 + " .Valor " + valor1
+
+
+
+       	 escreva ("\nViagem de maior distancia: " + impressao2) 
+  
+	}
+}
