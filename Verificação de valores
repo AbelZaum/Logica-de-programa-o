@@ -62,13 +62,13 @@ programa
 
 	   
 	   	se (viagem_menor == 1.0) 
-	   		impressao1 = "Origem " + origem1 + " Destino " + destino1 + " Distancia " + distancia1 + " Valor " + valor1
+	   		impressao1 = "Origem: " + origem1 + " ,Destino: " + destino1 + " ,Distancia: " + distancia1 + " ,Valor RS: " + valor1
 	   
 	   	se (viagem_menor == 2.0)
-        		impressao1 = "Origem " + origem2 + " Destino " + destino2+ " Distancia " + distancia2 + " Valor " + valor2
+        		impressao1 = "Origem: " + origem2 + " ,Destino: " + destino2+ " ,Distancia: " + distancia2 + " ,Valor R$: " + valor2
 	   
 	   	se (viagem_menor == 3.0)
-	   		impressao1 = "Origem " + origem3 + " Destino " + destino3 + " Distancia " + distancia3 + " Valor " + valor3
+	   		impressao1 = "Origem: " + origem3 + " ,Destino: " + destino3 + " ,Distancia: " + distancia3 + " ,Valor R$: " + valor3
 
 
        	 escreva ("\nViagem de menor valor: " + impressao1)
@@ -91,13 +91,13 @@ programa
 	   }  
  	
           se (maiordistancia == 1.0)
-	   		impressao2 = "Origem " + origem1 + " .Destino " + destino1 + " .Distancia " + distancia1 + " .Valor " + valor1
+	   		impressao2 = "Origem: " + origem1 + " ,Destino: " + destino1 + " ,Distancia: " + distancia1 + " ,Valor R$: " + valor1
 	   
 	   	se (maiordistancia == 2.0)
-        		impressao2 = "Origem " + origem2 + " .Destino " + destino2+ " .Distancia " + distancia2 + " .Valor " + valor2
+        		impressao2 = "Origem: " + origem2 + " ,Destino: " + destino2+ " ,Distancia: " + distancia2 + " ,Valor R$: " + valor2
 	   
 	   	se (maiordistancia == 3.0)
-	   		impressao2 = "Origem " + origem1 + " .Destino " + destino1 + " .Distancia " + distancia1 + " .Valor " + valor1
+	   		impressao2 = "Origem: " + origem1 + " ,Destino: " + destino1 + " ,Distancia: " + distancia1 + " ,Valor R$: " + valor1
 
 
 
