@@ -1,0 +1,32 @@
+
+package aula_22_03;
+
+import java.util.Scanner;
+
+
+public class Exercicios_Calcularformula {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner (System.in);
+        
+        float base;
+        float area;
+        float altura;
+        
+        System.out.print("Qual o valor da base?: ");
+        base = sc.nextFloat();
+        
+        System.out.print("Qual o valor da altura?: ");
+        altura = sc.nextFloat();
+        
+        area = base * altura /2;
+        
+        System.out.printf("A sua area é: %.2f \n",area);
+        
+               
+        
+    }
+    
+    
+}
