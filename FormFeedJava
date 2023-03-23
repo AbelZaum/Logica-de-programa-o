@@ -1,0 +1,23 @@
+
+package aula_22_03;
+
+public class Exercicio_Formfeed {
+   
+    public static void main(String[] args) {
+        
+      
+    float salario = 1450.00f;
+    int idade = 15;
+    char sexo = 'M';
+    int soma = 30;
+    String nome = "Marcela";
+    String moradia = "Santos";
+  
+    System.out.printf("Nome: %s \n Idade: %d \n Sexo: %c \n Mora em: %s \n Tem o salario de: %.3f \n Soma das variaveis 10 e 20: %d \n",nome,idade,sexo,moradia,salario,soma);
+        
+
+        
+  }
+    
+    
+}
