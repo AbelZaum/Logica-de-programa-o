@@ -1,0 +1,40 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		inteiro ladoA = 0, ladoB = 0, ladoC = 0
+
+		escreva ("Informe o lado A: ")
+		leia(ladoA)
+
+		escreva ("Informe o lado B: ")
+		leia (ladoB)
+
+		escreva ("Informe o lado C: ")
+		leia (ladoC)
+
+	  		se (((ladoA + ladoB) > ladoC) e ((ladoB + ladoC) > ladoA) e ((ladoA + ladoC) > ladoB)) 
+	  	
+			se ((ladoA == ladoB) e (ladoB == ladoC))
+				escreva ("Triângulo equilátero")
+
+				
+			 
+	  	     senao { 
+			se ((ladoA == ladoB) ou (ladoB == ladoC) ou (ladoA == ladoC)) 
+				 escreva ("Triângulo isósceles")
+			
+	  	     senao  
+				escreva ("Triângulo escaleno")
+	  	    	
+	  	    
+	  	    }senao {  
+			    	escreva ("Não é possível formar um triângulo com os valores informados")
+	  	       
+	         }	       
+
+	  		
+	}
+}
