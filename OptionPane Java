@@ -1,0 +1,37 @@
+package aula_29_03;
+
+import javax.swing.JOptionPane;
+
+public class Aula_29_03 {
+
+    public static void main(String[] args) {
+
+        int numero1 = 5, numero2 = 10, numero3 = 0;
+        numero3 = numero1 + numero2; 
+               
+        JOptionPane.showMessageDialog(null, "Meu nome é: Abel");
+        JOptionPane.showMessageDialog(null, "Eu tenho 19 anos");
+        JOptionPane.showMessageDialog(null, "Sou de Blumenau");
+        JOptionPane.showMessageDialog(null, "Estamos em uma Quarta-Feira");
+        
+        JOptionPane.showMessageDialog(null, "O valor da soma de " 
+                + numero1 + "+" + numero2 + "=" + numero3);
+        
+        String nome = JOptionPane.showInputDialog("Informe o seu nome: ");
+    
+        JOptionPane.showMessageDialog(null,"O nome digitado: " + nome);
+        
+        numero1 = Integer.parseInt(JOptionPane.showInputDialog("Informe um outro valor: "));
+        JOptionPane.showMessageDialog(null, "O valor informado foi: " + numero1);
+        
+        float x;
+        double y;
+        
+        x = Float.parseFloat(JOptionPane.showInputDialog("Valor Float : "));   
+        y = Double.parseDouble(JOptionPane.showInputDialog("Valor Double: "));
+         JOptionPane.showMessageDialog(null, "O valor do float é: " + x + 
+                 "\nO valor double é: " + y);
+     
+    }
+
+}
