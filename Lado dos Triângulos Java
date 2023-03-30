@@ -1,0 +1,29 @@
+package aula_29_03;
+
+import javax.swing.JOptionPane;
+
+public class Exercicios {
+
+    public static void main(String[] args) {
+
+        int ladoa, ladob, ladoc;
+
+        ladoa = Integer.parseInt(JOptionPane.showInputDialog("Informe o Lado A: "));
+        ladob = Integer.parseInt(JOptionPane.showInputDialog("Informe o lado B: "));
+        ladoc = Integer.parseInt(JOptionPane.showInputDialog("Informe o Lado C: "));
+
+        //SE
+        if (((ladoa + ladob) > ladoc) & ((ladob + ladoc) > ladoa) & ((ladoa + ladoc) > ladob)) //SE
+        
+        if ((ladoa == ladob) & (ladob == ladoc)) 
+                JOptionPane.showMessageDialog(null, "Triângulo equilátero");
+        else {//SENAO
+            if ((ladoa == ladob) || (ladob == ladoc) || (ladoa == ladoc)) 
+                    JOptionPane.showMessageDialog(null, "Triângulo isósceles");
+        else {
+                
+             } JOptionPane.showMessageDialog(null, "Triângulo escaleno");
+            }   else
+            JOptionPane.showMessageDialog(null, "Não é possível formar um triângulo com os valores informados");  
+    }
+}
