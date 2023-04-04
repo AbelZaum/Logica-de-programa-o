@@ -1,0 +1,69 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		real num1 = 0.0, num2 = 0.0, num3 = 0.0, num4 = 0.0, num5 = 0.0
+		real quantidadepos = 0.0, quantidadeneg = 0.0
+
+		escreva ("Informe o numero1: ")
+		leia (num1)
+
+		escreva ("Informe o numero2: ")
+		leia (num2)
+
+		escreva ("Informe o numero3: ")
+		leia (num3)
+
+		escreva ("Informe o numero4: ")
+		leia (num4)
+
+		escreva ("Informe o numero5: ")
+		leia (num5)
+		
+
+
+		se (num1>=0) {
+			quantidadepos = quantidadepos +1
+		}
+		 senao {
+			quantidadeneg = quantidadeneg +1
+		}
+			
+		 se (num2>=0) {
+			quantidadepos = quantidadepos +1
+		 }
+		senao {
+			quantidadeneg = quantidadeneg +1
+		}
+
+		se (num3>=0) {
+			quantidadepos = quantidadepos +1
+		}
+		senao {
+			quantidadeneg = quantidadeneg +1
+		}
+
+		se (num4>=0) {
+			quantidadepos = quantidadepos +1
+		}
+		senao {
+			quantidadeneg = quantidadeneg +1
+		}
+
+		se (num5>=0) {
+			quantidadepos = quantidadepos +1
+		}
+		senao {
+			quantidadeneg = quantidadeneg
+			+1
+		}
+			
+		 	escreva ("Quantidade de numeros negativos: " + quantidadeneg)	
+
+		 	escreva("\nQuantidade de numeros positivos: " + quantidadepos)		
+
+	
+	}
+}
