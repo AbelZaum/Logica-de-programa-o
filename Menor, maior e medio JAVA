@@ -1,0 +1,42 @@
+import javax.swing.JOptionPane;
+
+public class menor_medio_maior {
+
+    public static void main(String[] args) {
+
+        int num1 = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
+        int num2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
+        int num3 = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número:"));
+
+        int maior, medio, menor;
+
+        // Encontra o maior
+        if (num1 > num2 && num1 > num3) {
+            maior = num1;
+        } else if (num2 > num3) {
+            maior = num2;
+        } else {
+            maior = num3;
+        }
+
+        // Encontra o menor
+        if (num1 < num2 && num1 < num3) {
+            menor = num1;
+        } else if (num2 < num3) {
+            menor = num2;
+        } else {
+            menor = num3;
+        }
+
+        // Encontra o médio
+        if (num1 != maior && num1 != menor) {
+            medio = num1;
+        } else if (num2 != maior && num2 != menor) {
+            medio = num2;
+        } else {
+            medio = num3;
+        }
+
+        JOptionPane.showMessageDialog(null, "Menor: " + menor + "\nMédio: " + medio + "\nMaior: " + maior);
+    }
+}
