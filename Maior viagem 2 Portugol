@@ -1,0 +1,76 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nomedaviagem, nomedaviagem2, nomedaviagem3
+		real kilometroinicial1, kilometrofinal1, kilometroinicial2, kilometrofinal2, maiorviagem, menorviagem, distancia, distancia2
+		real distanciamaior, distancia3, kilometroinicial3, kilometrofinal3
+		cadeia nomemaiorviagem, nomemenorviagem
+		
+		escreva ("Nome da viagem: ")
+		leia (nomedaviagem)
+		
+		escreva ("kilometro inicial da rodovia: ")
+		leia (kilometroinicial1)
+
+		escreva ("kilometro final da rodovia: ")
+		leia (kilometrofinal1)
+//-------------------------------------------------
+		escreva ("Nome da viagem 2: ")
+		leia (nomedaviagem2)
+		
+		escreva ("kilometro inicial da rodovia: ")
+		leia (kilometroinicial2)
+
+		escreva ("kilometro final da rodovia: ")
+		leia (kilometrofinal2)
+//-------------------------------------------------
+		escreva ("Nome da viagem 3: ")
+		leia (nomedaviagem3)
+		
+		escreva ("kilometro inicial da rodovia: ")
+		leia (kilometroinicial3)
+
+		escreva ("kilometro final da rodovia: ")
+		leia (kilometrofinal3)
+		
+		
+
+//----------------------------------------------------------	
+		distancia = kilometrofinal1 - kilometroinicial1
+		distancia2 = kilometrofinal2 - kilometroinicial2
+		distancia3 = kilometrofinal3 - kilometroinicial3
+//----------------------------------------------------------
+		se (( distancia > distancia2) e ( distancia > distancia3)) {
+			maiorviagem = distancia
+			nomemaiorviagem = nomedaviagem
+		}senao {
+			se (distancia2 > distancia3){
+				maiorviagem = distancia2
+				nomemaiorviagem = nomedaviagem			
+			}senao {
+				maiorviagem = distancia3
+				nomemaiorviagem = nomedaviagem3		
+			}
+		}
+
+		se (( distancia < distancia2) e ( distancia < distancia3)) {
+			menorviagem = distancia
+			nomemenorviagem = nomedaviagem
+		}senao {
+			se (distancia2 < distancia3){
+				menorviagem = distancia2
+				nomemenorviagem = nomedaviagem2			
+			}senao {
+				menorviagem = distancia3
+				nomemenorviagem = nomedaviagem3
+			}
+		}
+			
+			escreva ("A maior viagem é a " + nomemaiorviagem + " tem " + maiorviagem + " kilometros")
+			escreva ("\nA menor viagem é a " + nomemenorviagem + " tem " + menorviagem + " kilometros")
+
+
+	}
+}
