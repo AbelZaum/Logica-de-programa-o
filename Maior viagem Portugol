@@ -1,0 +1,64 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro numero1, numero2, numero3
+
+		inteiro maiorvalor = 0, menorvalor = 0, mediovalor = 0
+
+		escreva ("Informe o numero 1: ")
+		leia (numero1)
+
+		escreva ("Informe o numero 2: ")
+		leia (numero2)
+
+		escreva ("Informe o numero 3: ")
+		leia (numero3)
+
+		se ((numero1 > numero2) e (numero1 > numero3)){
+			maiorvalor = numero1 
+			//maior numero é 1
+		}senao{
+			se (numero2 > numero3){
+				maiorvalor = numero2
+			// maior numero é 2
+			}senao{
+				maiorvalor = numero3
+			//maior numero é 3	
+			}
+		}
+		//descobrir o menor
+		se ((numero1 < numero2) e (numero1 < numero3)){
+				menorvalor = numero1 
+			// numero 1 é o menor
+		}senao{
+			se (numero2 < numero3) {
+				menorvalor = numero2
+				//numero 2 é o menor
+			}senao{
+				menorvalor = numero3
+				//numero 3 é o menor
+			}
+		}
+			 
+			
+		 se ((numero1 == maiorvalor) ou (numero1 == menorvalor)){
+
+		 	se ((numero2 == maiorvalor) ou (numero2 == menorvalor)){
+		 		mediovalor = numero3
+		 		// numero 3 é o do meio
+		 	} senao{
+		 		mediovalor = numero2
+		 	}	// numero 2 é o do meio
+		 	}senao {
+		 		mediovalor = numero1
+		 }		// numero 1 é o do meio
+
+			escreva ("O maior numero é: " + maiorvalor)
+			escreva ("\nO menor numero é: " + menorvalor)
+			escreva ("\nO numero do meio é: " + mediovalor)
+
+		
+	}
+}
