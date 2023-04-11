@@ -1,0 +1,37 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nome
+		inteiro idade, notateorica = 0, notapratica = 0
+
+		escreva("Informe o seu nome: ")
+		leia (nome)
+
+		escreva("Informe a sua idade: ")
+		leia(idade)
+
+		se (idade >=18){
+			escreva("Informe a nota da prova teorica do candidato (0 a 10): ")
+			leia (notateorica)
+			
+			
+			se (notateorica >=7) {
+				escreva ("Informe a nota da prova pratica do candidato (0 a 10: ")
+				leia (notapratica)
+			
+			se (notapratica >=7) {
+				escreva ("O candidato esta apto a receber a CNH")
+			
+			} senao 
+				escreva("O candidato nao teve a nota suficiente no exame pratico para obter a CNH")
+			
+			} senao 
+				 escreva ("O candidato nao teve a nota suficiente no exame teorico para obter a CNH")
+			
+			}senao 
+				escreva ("O canditado nao atingiu a idade minima de 18 anos")			
+					
+	}
+}
