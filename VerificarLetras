@@ -1,0 +1,27 @@
+import javax.swing.JOptionPane;
+
+public class verificaçãoLetra {
+    public static void main(String[] args) {
+        // solicita a letra ao usuário
+        String letraStr = JOptionPane.showInputDialog("Digite uma letra:");
+        char letra = letraStr.charAt(0);
+
+        // verifica se a letra é uma vogal ou consoante
+        String mensagem;
+        switch (letra) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                mensagem = "A letra " + letra + " é uma vogal.";
+                break;
+            default:
+                mensagem = "A letra " + letra + " é uma consoante.";
+                break;
+        }
+
+        // exibe o resultado para o usuário
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+}
