@@ -1,24 +1,36 @@
+
 import javax.swing.JOptionPane;
 
 public class calculoDoSalario {
+
     public static void main(String[] args) {
-        // solicita o valor da hora trabalhada e a quantidade de horas trabalhadas na semana
+        // solicita o valor da hora trabalhada e a quantidade de horas trabalhadas no mês
         String valorHoraStr = JOptionPane.showInputDialog("Digite o valor da sua hora de trabalho:");
         double valorHora = Double.parseDouble(valorHoraStr);
 
-        String horasTrabalhadasStr = JOptionPane.showInputDialog("Digite a quantidade de horas trabalhadas na semana:");
+        String horasTrabalhadasStr = JOptionPane.showInputDialog("Digite a quantidade de horas trabalhadas no mês:");
         int horasTrabalhadas = Integer.parseInt(horasTrabalhadasStr);
 
-        // calcula o salário 
+        // calcula o número de horas extras e o salário bruto
+        int horasExtras;
         double salarioBruto;
-        if (horasTrabalhadas <= 40) {
-            salarioBruto = valorHora * horasTrabalhadas;
-        } else {
-            int horasExtras = horasTrabalhadas - 40;
-            salarioBruto = (valorHora * 40) + (valorHora * 1.5 * horasExtras);
+        switch (horasTrabalhadas / 4) {
+            case 0:
+            case 1:
+                horasExtras = horasTrabalhadas - 40;
+                salarioBruto = (valorHora * horasTrabalhadas) + (valorHora * 0.5 * horasExtras);
+
+            case 2:
+                salarioBruto = valorHora * 160;
+
+            case 3:
+                salarioBruto = valorHora * 200;
+
+            default:
+                salarioBruto = valorHora * horasTrabalhadas;
+
         }
 
-        
         JOptionPane.showMessageDialog(null, "O seu salário bruto é R$" + salarioBruto + ".");
     }
 }
