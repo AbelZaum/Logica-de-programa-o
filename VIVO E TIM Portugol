@@ -60,7 +60,7 @@ programa
 			valortotal += quantidadeMB * valorMBtaxa
 		}
 		
-		
+		escreva ("Valor total: " + valortotal)
 		
 	
 		
