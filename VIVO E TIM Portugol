@@ -1,0 +1,76 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		// Variaveis
+
+		cadeia operadora = ""
+		real minutosligacao = 0.0, quantidadeSMS = 0.0, quantidadeMB = 0.0
+		real valortotal = 0.0
+		//Constantes
+
+		real valorMinutotim = 0.35, valorSMStim = 0.10, valorMBtaxa1tim = 0.015, valorMBtaxa2tim = 0.01
+
+		real valorMinuto = 0.0, valorSMS = 0.0, valorMBtaxa = 0.0, valorMBtaxa2 = 0.0
+
+
+		real valorMinutovivo = 0.30, valorSMSvivo = 0.10, valorMBtaxa1vivo = 0.012, valorMBtaxa2vivo = 0.09
+
+		//Entradas
+
+		escreva ("Informe sua operadora ('TIM ou 'VIVO): ")
+		leia (operadora)
+
+		escreva ("\nInforme a quantidade de ligação: ")
+		leia (minutosligacao)	
+
+		escreva ("\nInforme a quantidade de SMS: ")
+		leia (quantidadeSMS)	
+
+		escreva ("\nInforme a quantidade de internet: ")
+		leia (quantidadeMB)	
+
+		//Fim das entradas
+
+		//Inicio processamento
+
+		se (operadora == "TIM"){
+			valorMinuto = valorMinutotim
+			valorSMS = valorSMStim
+			valorMBtaxa = valorMBtaxa1tim
+			valorMBtaxa2 = valorMBtaxa2tim
+		} senao {
+
+			valorMinuto = valorMinutovivo
+			valorSMS = valorSMSvivo
+			valorMBtaxa = valorMBtaxa1vivo
+			valorMBtaxa2 = valorMBtaxa2vivo
+		}
+
+		valortotal += valorSMS * quantidadeSMS
+		
+		valortotal += valorMinuto * minutosligacao
+		
+		se (quantidadeMB > 500){
+			valortotal += 500 * valorMBtaxa
+			valortotal += (quantidadeMB - 500) * valorMBtaxa2
+		} senao {
+			valortotal += quantidadeMB * valorMBtaxa
+		}
+		
+		
+		
+	
+		
+		
+		
+		
+		//Fim do processamento
+
+
+
+
+	}
+}
