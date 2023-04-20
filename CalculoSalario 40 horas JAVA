@@ -2,36 +2,30 @@ package aula_12_04;
 
 import javax.swing.JOptionPane;
 
-public class aumentoSalario {
+public class JornadadeTrabalho {
 
     public static void main(String[] args) {
 
-        Object[] valores = {"Serviços Gerais", "Vigia", "Recepcionista", "Vendedor"};
-        Object selectedValores = JOptionPane.showInputDialog(null, "Informe seu cargo: ", "Cargo", JOptionPane.WARNING_MESSAGE, null, valores, valores[0]);
-        float salario = Float.parseFloat(JOptionPane.showInputDialog("Informe seu salario: R$"));
+        int horas;
+        float valorhora;
+        String salario;
 
-        String codigo = (String) selectedValores;
+        horas = Integer.parseInt(JOptionPane.showInputDialog("Informe as horas trabalhadas:"));
+        valorhora = Float.parseFloat(JOptionPane.showInputDialog("Qual o valor da sua hora de trabalho?:"));
 
-        String novoSalario;
-        novoSalario = switch (codigo) {
-            case "Serviços Gerais" ->
-                "Serviço Gerais R$" + (salario + (salario * 50 / 100));
+        if (horas > 160) {
+            float horaExtra = horas - 160;
+            float valorExtra = (horaExtra * ((valorhora * 50) / 100));
+            float salarioTotal = valorExtra + (horas * valorhora);
+            salario = "O funcionario trabalhou " + horas
+                    + "\ne fez " + horaExtra + "horas extras"
+                    + "\n seu valor de horas extras foi: R$" + valorExtra
+                    + "\nseu salário este mês foi: R$" + salarioTotal;
 
-            case "Vigia" ->
-                "Vigia R$" + (salario + (salario * 30 / 100));
-
-            case "Recepcionista" ->
-                "Recepcionista R$" + (salario + (salario * 25 / 100));
-
-            case "Vendedor" ->
-                "Vendedor R$ " + (salario + (salario * 15 / 100));
-
-            default ->
-                "";
-
-        };
-
-        JOptionPane.showMessageDialog(null, novoSalario);
-
+        }else {
+            salario = "O funcionario não fez horas extras"
+                    + "\nSeu saláro deste mês é: R$" + (horas * valorhora); 
+        }
+            JOptionPane.showMessageDialog(null, salario);
     }
 }
