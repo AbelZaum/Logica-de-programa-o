@@ -1,0 +1,59 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia tipoCombustivel, formaPagamento
+		real valorAbastecer = 0.0, valorTotal = 0.0, valorImposto = 0.0, valorLitros = 0.0
+
+		escreva("Tipo de combustível (E - Etanol, GC - Gasolina Comum, GA - Gasolina Aditivada, D - Diesel): ")
+		leia(tipoCombustivel)
+
+		escreva("Informe o valor para abastecer R$ ")
+		leia(valorAbastecer)
+
+		escreva("Forma de pagamento (DI - Dinheiro, CR - Crédito, DB - Débito): ")
+		leia(formaPagamento)
+
+		se (tipoCombustivel == "E") {
+			valorLitros = valorAbastecer / 3.75
+			valorImposto = valorLitros * 0.17
+			se (formaPagamento == "DI")
+				valorTotal = valorAbastecer * 0.93 // 7% de desconto
+			senao
+				valorTotal = valorAbastecer
+		}
+		senao se (tipoCombustivel == "GC") {
+			valorLitros = valorAbastecer / 5.35
+			valorImposto = valorLitros * 0.17
+			se (formaPagamento == "DI")
+				valorTotal = valorAbastecer * 0.93 // 7% de desconto
+			senao
+				valorTotal = valorAbastecer
+		}
+		senao se (tipoCombustivel == "GA") {
+			valorLitros = valorAbastecer / 5.85
+			valorImposto = valorLitros * 0.17
+			se (formaPagamento == "DI")
+				valorTotal = valorAbastecer * 0.93 // 7% de desconto
+			senao
+				valorTotal = valorAbastecer
+		}
+		senao se (tipoCombustivel == "D") {
+			valorLitros = valorAbastecer / 6.69
+			valorImposto = valorLitros * 0.17
+			se (formaPagamento == "DI")
+				valorTotal = valorAbastecer * 0.93 // 7% de desconto
+			senao
+				valorTotal = valorAbastecer
+		}
+		senao {
+			escreva("Tipo de combustível inválido.")
+			
+		}
+
+		// Exibir resultados
+		escreva("Valor total de litros: ", valorLitros, " litros")
+		escreva("\nValor total: R$ ", valorTotal)
+		escreva("\nTotal de Imposto: R$ ", valorImposto)
+	}
+}
