@@ -1,0 +1,75 @@
+programa {
+   
+    funcao inicio() {
+       
+        // Declaração de variáveis
+        cadeia nome, filme, tipo_sessao, forma_pagamento
+        inteiro idade, quantidade_ingressos
+        real preco_unitario, preco_total
+        
+        // Saudação e cadastro do cliente
+        escreva("Bem-vindo ao Cinema Senai!\n")
+        escreva("Por favor, informe seu nome: ")
+        leia(nome)
+        escreva("Informe sua idade: ")
+        leia(idade)
+        
+        // Seleção de filmes
+        escreva("\nFilmes disponíveis:")
+        se (idade >= 18) {
+            escreva("\n- Homem de Ferro")
+            escreva("\n- Gato de Botas")
+            escreva("\n- O Exterminador do Futuro")
+            escreva("\n- Velozes e Furiosos")
+        } senao {
+            escreva("\n- Gato de Botas")
+            escreva("\n- Mario Bros")
+        }
+        escreva("\nPor favor, escolha um filme: ")
+        leia(filme)
+        
+        // Quantidade de ingressos
+        escreva("\nInforme a quantidade de ingressos: ")
+        leia(quantidade_ingressos)
+        
+        // Tipo de sessão
+        escreva("\nEscolha o tipo de sessão:\n")
+        escreva("1 - Filme normal (preço mais em conta)\n")
+        escreva("2 - Filme 3D (preço mais caro)\n")
+        leia(tipo_sessao)
+        se (tipo_sessao == "1") {
+            preco_unitario = 20.0 // preço do ingresso normal
+        } senao {
+            preco_unitario = 30.0 // preço do ingresso 3D
+        }
+        
+        // Forma de pagamento
+        escreva("\nEscolha a forma de pagamento:\n")
+        escreva("1 - Cartão\n")
+        escreva("2 - Dinheiro\n")
+        leia(forma_pagamento)
+        
+        // Cálculo do preço total
+        preco_total = quantidade_ingressos * preco_unitario
+        
+        // Impressão do comprovante
+        escreva("\n----- Comprovante de Compra -----\n")
+        escreva("Nome: ", nome, "\n")
+        escreva("Idade: ", idade, "\n")
+        escreva("Filme: ", filme, "\n")
+        escreva("Tipo de sessão: ")
+        se (tipo_sessao == "1") {
+            escreva("Normal")
+        } senao {
+            escreva("3D")
+        }
+        escreva("\nQuantidade de ingressos: ", quantidade_ingressos, "\n")
+        escreva("Preço total: R$", preco_total, "\n")
+        escreva("Forma de pagamento: ")
+        se (forma_pagamento == "1") {
+            escreva("Cartão")
+        } senao {
+            escreva("Dinheiro")
+        }
+    }
+}
