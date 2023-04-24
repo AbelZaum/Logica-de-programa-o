@@ -1,0 +1,51 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+			
+	    cadeia tipo_operacao
+	    real tensao, corrente, potencia, resistencia
+	
+		escreva("Informe o tipo de operação que deseja realizar:")
+		escreva("(P) para potência elétrica, (C) para corrente elétrica ou (R) para resistência elétrica: ")
+		leia(tipo_operacao)
+	
+	se (tipo_operacao == "P") {
+	    escreva("Informe a Tensão elétrica: ")
+	    leia(tensao)
+	    escreva("Informe a Corrente elétrica: ")
+	    leia(corrente)
+	    
+	    potencia = tensao * corrente
+	    
+	    escreva("O resultado da operação foi: ", potencia, " watts (W)")
+	
+	}senao se (tipo_operacao == "C") {
+	    escreva("Informe a Tensão elétrica: ")
+	    leia(tensao)
+	    escreva("Informe a Resistência elétrica: ")
+	    leia(resistencia)
+	    
+	    corrente = tensao / resistencia
+	    
+	    escreva("O resultado da operação foi: ", corrente, " amperes (A)")
+	
+	}senao se (tipo_operacao == "R") {
+	    escreva("Informe a Tensão elétrica: ")
+	    leia(tensao)
+	    escreva("Informe a Corrente elétrica: ")
+	    leia(corrente)
+	   
+	    resistencia = tensao / corrente
+	    
+	    escreva("O resultado da operação foi: ", resistencia, " ohms (Ω)")
+	
+	}senao {
+	    escreva("Tipo de operação inválido!")
+	}
+	
+			
+	}
+}
