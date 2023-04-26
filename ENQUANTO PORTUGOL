@@ -3,18 +3,18 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro i = 0
-		cadeia parar = "N"
+		
+		cadeia continuar = "S"
 
-		enquanto (parar != "S"){
+		enquanto (continuar == "S"){
 
-			escreva ("Deseja interromper a estrutura (S/N): ")
-			leia (parar)
+			escreva ("Deseja continuar informando os produtos? (S/N): ")
+			leia (continuar)
 
-			i += 1
+			
 		}
 
-			escreva ("Valor de i: " + i)
+			escreva ("FIM")
 
 		
 	}
