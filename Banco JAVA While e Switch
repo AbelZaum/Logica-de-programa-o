@@ -1,0 +1,61 @@
+
+import javax.swing.JOptionPane;
+
+public class BancodoAluno {
+
+    public static void main(String[] args) {
+
+        String nome;
+        int numeroConta;
+        float depositoInicial = 0.0f;
+        float valorDigitado;
+        float saldo;
+        numeroConta = Integer.parseInt(JOptionPane.showInputDialog("Qual o numero da conta?"));
+
+        nome = JOptionPane.showInputDialog("Qual o seu nome?");
+
+        depositoInicial = Float.parseFloat(JOptionPane.showInputDialog("Deposito Inicial R$:"));
+
+        int op = 1;
+        saldo = depositoInicial;
+        float valorDeposito = 0.0f, saque = 0.0f;
+
+        do {
+
+            op = Integer.parseInt(JOptionPane.showInputDialog("Informe a operação que deseja"
+                    + "\n2- Deposito"
+                    + "\n3- Saque"
+                    + "\n4- Saldo "
+                    + "\n5- Sair"));
+            valorDigitado = switch (op) {
+                case 2 ->
+                 saldo += valorDeposito = Float.parseFloat(JOptionPane.showInputDialog("Deposito R$:"));
+
+                case 3 ->
+                  saldo -= valorDeposito = Float.parseFloat(JOptionPane.showInputDialog("Saque R$:"));
+                case 4 ->
+                    saldo;
+
+                default ->
+                    op = 5;
+            };
+            if (op != 5) {
+                JOptionPane.showMessageDialog(null, "Seu Saldo é R$ " + valorDigitado);
+            } else {
+                JOptionPane.showMessageDialog(null, "Obrigada por utilizar nosso banco!");
+            }
+
+        } while (op != 5);
+
+        JOptionPane.showMessageDialog(null, "----------------------"
+                + "\nBanco Abel"
+                + "\n-------------------"
+                + "\nConta: " + numeroConta
+                + "\nNome Cliente: " + nome
+                + "\nSaldo Inicial: R$" + depositoInicial
+                + "\n Saldo atual: R$" + saldo
+                + "\n----------------------");
+
+        System.exit(0);
+    }
+}
