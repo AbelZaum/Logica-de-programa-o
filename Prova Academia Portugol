@@ -1,0 +1,75 @@
+
+programa
+{
+    funcao inicio()
+    {
+        
+        //--VARIAVEIS
+        cadeia nome_aluno
+        real altura, peso, imc
+        real calorias_semana = 0.0, calorias_musculacao = 0.0, calorias_corrida = 0.0, calorias_bicicleta = 0.0
+        real horas_musculacao = 0.0, horas_bicicleta = 0.0, horas_corrida = 0.0
+        real valor_musculacao, valor_corrida, valor_bicicleta, desconto = 0.0
+        real valor_total = 0.0, valor_academia = 0.0, valor_pagar = 0.0
+
+       //-- ENTRADA DE DADOS
+        escreva ("Qual o seu nome?: ")
+        leia (nome_aluno)
+        
+        escreva ("Digite a altura do aluno (em metros): ")
+        leia (altura)
+
+        escreva ("Digite o peso do aluno em (KG): ")
+        leia (peso)
+
+        escreva ("Digite a quantidade de calorias que o aluno deseja perder na semana: ")
+        leia(calorias_semana)
+        
+        //-- PROCESSAMENTO
+        
+        imc = peso / (altura * altura)
+        
+        se (calorias_semana <= 450) {
+            horas_musculacao = calorias_semana / 150            
+            valor_total = 80.0
+		     
+        
+        }senao se (calorias_semana <= 1850) {
+            horas_musculacao = 3.0
+            calorias_musculacao = 450.0
+            calorias_corrida = calorias_semana - calorias_musculacao
+            horas_corrida = calorias_corrida / 700
+            valor_total = 80.0 + 20
+        	  
+        }senao {
+            horas_musculacao = 3.0
+            calorias_musculacao = 450.0
+            horas_corrida = 2.0
+            calorias_corrida = 1400.0
+            calorias_bicicleta = calorias_semana - (calorias_musculacao + calorias_corrida)
+            horas_bicicleta = calorias_bicicleta / 550
+            valor_total = 80.0 + 20 + 30
+		  
+
+        }se (calorias_semana >= 4000) {
+            desconto = valor_total * 50 / 100
+            
+        }
+		valor_pagar = valor_total - desconto
+        
+       
+        //-- SAIDA DE DADOS
+        escreva ("IMC: " + imc)
+        escreva ("\nLista de exercícios:")
+        escreva("\n Musculação: " + calorias_musculacao + " calorias")
+        escreva("\n Corrida: " + calorias_corrida + " calorias")
+        escreva("\n Bicicleta ergonômica: " + calorias_bicicleta + " calorias")
+        escreva("\nValor do plano: R$ " + valor_total)
+        escreva ("\nDesconto: R$ " + desconto)
+    	escreva ("\nValor a pagar: R$ " + valor_pagar)
+    
+    }
+    
+}
+
+		
