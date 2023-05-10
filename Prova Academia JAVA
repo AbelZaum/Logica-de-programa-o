@@ -1,5 +1,6 @@
 package provaacademia;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class ProvaAcademia {
@@ -14,6 +15,9 @@ public class ProvaAcademia {
         float valor_musculacao, valor_corrida, valor_bicicleta, desconto = 0.0f;
         float valor_total = 0.0f, valor_academia = 0.0f, valor_pagar = 0.0f;
 
+       DecimalFormat df = new DecimalFormat ();
+       df.applyPattern(" #,#00.00");
+        
         //--ENTRADA DE DADOS
         nome_aluno = JOptionPane.showInputDialog("Qual o nome do aluno?");
 
@@ -53,7 +57,7 @@ public class ProvaAcademia {
         imc = peso / (altura * altura);
 
         //--SAIDA DE DADOS      
-        JOptionPane.showMessageDialog(null, "IMC: " + imc);
+        JOptionPane.showMessageDialog(null, "IMC: " + df.format(imc) );
         JOptionPane.showMessageDialog(null, "lista de Exercícios"
                 + "\n- Musculação " + calorias_musculacao + " Calorias"
                 + "\n- Corrida: " + calorias_corrida + " Calorias"
