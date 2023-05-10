@@ -1,0 +1,66 @@
+package provaacademia;
+
+import javax.swing.JOptionPane;
+
+public class ProvaAcademia {
+
+    public static void main(String[] args) {
+
+        //--VARIAVEIS
+        String nome_aluno;
+        float altura, peso, imc;
+        float calorias_semana = 0.0f, calorias_musculacao = 0.0f, calorias_corrida = 0.0f, calorias_bicicleta = 0.0f;
+        float horas_musculacao = 0.0f, horas_bicicleta = 0.0f, horas_corrida = 0.0f;
+        float valor_musculacao, valor_corrida, valor_bicicleta, desconto = 0.0f;
+        float valor_total = 0.0f, valor_academia = 0.0f, valor_pagar = 0.0f;
+
+        //--ENTRADA DE DADOS
+        nome_aluno = JOptionPane.showInputDialog("Qual o nome do aluno?");
+
+        altura = Float.parseFloat(JOptionPane.showInputDialog("Digite a altura do aluno (em metros)"));
+
+        peso = Float.parseFloat(JOptionPane.showInputDialog("Digite o peso do aluno em (KG)"));
+
+        calorias_semana = Float.parseFloat(JOptionPane.showInputDialog("Digite a quantidade de calorias que o aluno deseja perder na semana"));
+
+        //--PROCESSAMENTO
+        if (calorias_semana <= 450) {
+            horas_musculacao = calorias_semana / 150;
+            valor_total = 80.0f;
+
+        } else if (calorias_semana <= 1850) {
+            horas_musculacao = 3.0f;
+            calorias_musculacao = 450.0f;
+            calorias_corrida = calorias_semana - calorias_musculacao;
+            horas_corrida = calorias_corrida / 700;
+            valor_total = (80.0f + 20);
+
+        } else {
+            horas_musculacao = 3.0f;
+            calorias_musculacao = 450.0f;
+            horas_corrida = 2.0f;
+            calorias_corrida = 1400.0f;
+            calorias_bicicleta = calorias_semana - (calorias_musculacao + calorias_corrida);
+            horas_bicicleta = calorias_bicicleta / 550f;
+            valor_total = 80.0f + 20 + 30f;
+        }
+
+        if (calorias_semana >= 4000) {
+            desconto = (valor_total * 50 / 100);
+
+        }
+        valor_pagar = (valor_total - desconto);
+        imc = peso / (altura * altura);
+
+        //--SAIDA DE DADOS      
+        JOptionPane.showMessageDialog(null, "IMC: " + imc);
+        JOptionPane.showMessageDialog(null, "lista de Exercícios"
+                + "\n- Musculação " + calorias_musculacao + " Calorias"
+                + "\n- Corrida: " + calorias_corrida + " Calorias"
+                + "\n- Bicicleta Ergonômica: " + calorias_bicicleta + " Calorias"
+                + "\n- Valor do Plano: R$ " + valor_total
+                + "\n- Desconto: R$ " + desconto
+                + "\n- Valor a Pagar: R$ " + valor_pagar);
+    }
+
+}
