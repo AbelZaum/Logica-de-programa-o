@@ -1,0 +1,36 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia nomeAluno [999]
+		inteiro idadeAluno [999]
+		caracter resposta = 'S'
+		inteiro contador  = 0
+		
+		faca {
+			
+			escreva ("\nInforme o nome do aluno: (" + (contador + 1) + ") :")
+			leia (nomeAluno[contador])
+
+			escreva ("\nInforme a idade do aluno: (" + (contador + 1) + ") :")
+			leia (idadeAluno[contador])
+			
+			escreva ("\nDeseja continuar a informar? (S/N) ")
+			leia (resposta)
+
+			contador++
+			
+		} enquanto (resposta == 'S' ou resposta == 's')
+
+
+		para (inteiro contador2 = 0; contador2 < contador; contador2++)
+		{
+
+			escreva ("Aluno: " + nomeAluno[contador2] + "\n")
+			escreva ("Idade: " + idadeAluno [contador2] + "\n")
+		}
+		
+	}
+}
