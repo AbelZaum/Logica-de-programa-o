@@ -1,0 +1,34 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia nomes [999]
+		inteiro idades [999]
+		inteiro contador = 0
+		cadeia continuar = "S"
+
+		faca {
+		
+			se (continuar != "n") {
+			
+				escreva ("\nDigite o nome do aluno: ")
+				leia (nomes[contador])
+				escreva ("Digite a idade do aluno: ")
+				leia (idades[contador])
+				contador++				
+			}
+
+			escreva ("Deseja continuar? (S/N) ")
+			leia (continuar)
+		
+		}enquanto (continuar != "n")
+		
+		para (inteiro a = 0; a < contador; a++) {
+		
+
+		escreva ("\nAluno" + (a + 1) + ":" + nomes [a] + "\nIdade" + (a + 1) + ":" + idades [a])
+		}
+	}
+}
