@@ -1,0 +1,56 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		//-- VARIAVEIS E CONSTANTES
+		
+		inteiro tamanho
+		cadeia nome
+		real notas[99], media, soma		
+		caracter resposta
+		
+		//-- ENTRADA DE DADOS
+		faca {
+		
+		faca {		
+			soma = 0.0
+			escreva ("\nDigite o nome do aluno: ")
+			leia (nome)
+
+			se (nome == "") {
+				escreva ("Nome Invalido!")
+			}
+				
+		}enquanto (nome == "")
+			
+		faca {
+			escreva ("\nDigite a quantidade de notas: ")
+			leia (tamanho)
+
+			se (tamanho <= 0) {
+				escreva ("Nota Invalida!")
+			}
+				
+		}enquanto (tamanho <= 0)
+			
+			//-- PROCESSAMENTO
+			para (inteiro i = 0; i < tamanho; i++) {
+				escreva ("Digite a nota " , i + 1 , ": ")
+				leia (notas [i])
+				soma += notas[i]			
+			}
+
+			media = soma / tamanho
+			
+			//-- SAIDA DE DADOS
+			escreva ("A media do aluno " + nome + " é " + media)
+			escreva ("\nDeseja continuar? (s/n) ")				
+			leia (resposta)
+		}enquanto (resposta == 's')
+
+		escreva ("Programa Finalizado!")
+
+	}
+		
+}
