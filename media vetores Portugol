@@ -1,18 +1,36 @@
 programa
 {
+
+	inclua biblioteca Matematica
 	
 	funcao inicio()
 	{
 		//-- VARIAVEIS E CONSTANTES
-		
-		inteiro tamanho
-		cadeia nome
-		real notas[99], media, soma		
+			
 		caracter resposta
 		
 		//-- ENTRADA DE DADOS
 		faca {
+			limpa ()
 		
+			calcularMedia ()
+			
+			escreva ("\nDeseja continuar? (s/n) ")				
+			leia (resposta)
+		}enquanto (resposta == 's' ou resposta == 'S')
+
+		escreva ("Programa Finalizado!")
+		
+	}
+		
+		funcao calcularMedia () 
+		{
+				
+			inteiro tamanho
+			cadeia nome
+			real notas[99], media = 0.0, soma		
+			caracter resposta
+
 		faca {		
 			soma = 0.0
 			escreva ("\nDigite o nome do aluno: ")
@@ -28,7 +46,7 @@ programa
 			escreva ("\nDigite a quantidade de notas: ")
 			leia (tamanho)
 
-			se (tamanho <= 0) {
+				se (tamanho <= 0) {
 				escreva ("Nota Invalida!")
 			}
 				
@@ -43,14 +61,10 @@ programa
 
 			media = soma / tamanho
 			
+			media = Matematica.arredondar (media, 2)
+			
 			//-- SAIDA DE DADOS
 			escreva ("A media do aluno " + nome + " é " + media)
-			escreva ("\nDeseja continuar? (s/n) ")				
-			leia (resposta)
-		}enquanto (resposta == 's')
-
-		escreva ("Programa Finalizado!")
-
+	
+		}
 	}
-		
-}
