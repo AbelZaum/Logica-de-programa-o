@@ -1,0 +1,34 @@
+
+import javax.swing.JOptionPane;
+
+public class conjuntoNotas {
+
+    public static void main(String[] args) {
+        
+        int quantidadeNotas = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de notas:"));
+        double[] notas = new double[quantidadeNotas];
+        double soma = 0;
+
+        for (int i = 0; i < quantidadeNotas; i++) {
+            notas[i] = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota " + (i + 1) + ":"));
+            soma += notas[i];
+        }
+
+        double media = soma / quantidadeNotas;
+        JOptionPane.showMessageDialog(null, "A média das notas é: " + media);
+
+        String notasAcimaMedia = "";
+        String notasAbaixoMedia = "";
+
+        for (int i = 0; i < quantidadeNotas; i++) {
+            if (notas[i] > media) {
+                notasAcimaMedia += notas[i] + " ";
+            } else {
+                notasAbaixoMedia += notas[i] + " ";
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Notas acima da média: " + notasAcimaMedia);
+        JOptionPane.showMessageDialog(null, "Notas abaixo da média: " + notasAbaixoMedia);
+    }
+}
