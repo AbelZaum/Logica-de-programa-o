@@ -1,79 +1,58 @@
 programa
 {
+		inclua biblioteca Util --> u
 	
-	inclua biblioteca Util --> u	
-
 	const inteiro MAX = 100
-	cadeia produto [MAX] 
+	cadeia produto[MAX]
 	inteiro n = 0
 	
-	funcao inserirProduto()
-	{
-		
-			se (n < MAX) {
-				escreva ("Insira o nome do produto: ")
-				leia (produto [n])
-				n++
-				escreva ("\nProduto inserido com sucesso!\n")
-		} senao {
-				escreva ("\nErro: Limite maximo de produtos atingido!\n")	
-		}
+	funcao inserirProduto() {
+	    se (n < MAX) {
+	        escreva("Insira o nome do produto: ")
+	        leia(produto[n])
+	        n++
+	        escreva("\nProduto inserido com sucesso!\n")
+	    } senao {
+	        escreva("\nErro: Limite máximo de produtos atingido!\n")
+	    }
 	}
-		funcao exibirProduto () 
-		{
-			se (n == 0) {
-				escreva ("\nNenhum dado inserido\n")	
-			
-		} senao {
-				escreva ("\nProdutos\n")
-				para (inteiro i = 0; i < n; i++) {
-					escreva(produto [i] + "\n")
-					
-				}	
-			}
-		}
-		funcao inicio ()
-		{
-			inteiro opcao
-			
-			
-			enquanto (verdadeiro) {
-			escreva ("MENU\n")
-			escreva ("1 - Inserir Produto\n")
-			escreva ("2 - Exibir Produtos\n")
-			escreva ("3 - Encerrar Programa\n")
-			escreva ("Escolha uma opção: ")
-			leia (opcao)
-					
-			se (opcao == 1)
-			{
-			
-				inserirProduto()
-
-			} senao se (opcao == 2) {
-				exibirProduto ()
-			} senao se (opcao == 3) {
-				
-				escreva ("Programa Encerrado!")
-				pare
-			} senao {
-
-				escreva ("Opção invalida!\n")
-		
-			}
-
-			u.aguarde(2000)
-			limpa ()
-		}
-			
-		
-	}	
-		
-}
 	
-
-
-
-
-
-
+	funcao exibirProduto() {
+	    se (n == 0) {
+	        escreva("\nNenhum dado inserido\n")
+	    } senao {
+	        escreva("\nProdutos\n")
+	        para (inteiro i = 0; i < n; i++) {
+	            escreva(produto[i] + "\n")
+	        }
+	    }
+	}
+	
+	funcao inicio() {
+	    cadeia opcao
+	    
+	    enquanto (verdadeiro) {
+	        escreva("MENU\n")
+	        escreva("1 - Inserir Produto\n")
+	        escreva("2 - Exibir Produtos\n")
+	        escreva("3 - Encerrar Programa\n")
+	        escreva("Escolha uma opção: ")
+	        
+	        leia(opcao)
+	        
+	        se (opcao == "1") {
+	            inserirProduto()
+	        } senao se (opcao == "2") {
+	            exibirProduto()
+	        } senao se (opcao == "3") {
+	            escreva("Programa Encerrado!")
+	            pare
+	        } senao {
+	            escreva("Opção inválida!\n")
+	        }
+	
+	        u.aguarde(2000)
+	        limpa()
+	    }
+	}
+}
