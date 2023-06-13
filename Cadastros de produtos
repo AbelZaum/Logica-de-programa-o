@@ -1,11 +1,12 @@
 programa
 {
-		inclua biblioteca Util --> u
+	inclua biblioteca Util --> u
 	
 	const inteiro MAX = 100
 	cadeia produto[MAX]
 	inteiro n = 0
-	
+	inteiro indice	
+		
 	funcao inserirProduto() {
 	    se (n < MAX) {
 	        escreva("Insira o nome do produto: ")
@@ -21,35 +22,81 @@ programa
 	    se (n == 0) {
 	        escreva("\nNenhum dado inserido\n")
 	    } senao {
-	        escreva("\nProdutos\n")
+	        escreva("\n-----Produtos-----\n")
 	        para (inteiro i = 0; i < n; i++) {
-	            escreva(produto[i] + "\n")
-	        }
+	            escreva ("Produto: " + produto[i] + "\n")
+	       
+	        se (produto [i] != "") {
+				escreva ("Indice: " + i + "\n")       	
+	         }	        	        	        
+	      }
 	    }
 	}
+
+	funcao exluirProduto () {
+			
+		escreva ("Digite o indice do produto que deseja excluir: ")
+		leia (indice)
+
+		se (indice >= 0 e indice < n) {
+			produto [indice] = ""
+			escreva ("Produto excluido com sucesso!\n")	
+		} senao {
+			escreva ("Indice invalido!\n")			
+
+		}
+
+	}
+	funcao atualizarProduto () {
+
+		cadeia novoValor
+		
+		escreva ("Digite o indice do produto que deseja atualizar: ")
+		leia (indice)
 	
+		se (indice >= 0 e indice < n) {
+			escreva ("Digite o novo valor para o produto: ")
+			leia (novoValor)
+			produto [indice] = novoValor
+			escreva ("Produto atualizado com sucesso!\n")
+	
+		} senao {
+
+			escreva ("Indice invalido!\n")
+			
+		}
+
+	}
 	funcao inicio() {
 	    cadeia opcao
 	    
-	    enquanto (verdadeiro) {
+	 enquanto (verdadeiro) {
 	        escreva("MENU\n")
 	        escreva("1 - Inserir Produto\n")
 	        escreva("2 - Exibir Produtos\n")
-	        escreva("3 - Encerrar Programa\n")
+	        escreva("3 - Excluir o Produto\n")
+	        escreva("4 - Atualizar o Produto\n")
+	        escreva("5 - Encerrar Programa\n")
 	        escreva("Escolha uma opção: ")
 	        
 	        leia(opcao)
 	        
-	        se (opcao == "1") {
+	      se (opcao == "1") {
 	            inserirProduto()
-	        } senao se (opcao == "2") {
+	      } senao se (opcao == "2") {
 	            exibirProduto()
-	        } senao se (opcao == "3") {
-	            escreva("Programa Encerrado!")
+	      } senao se (opcao == "3") {
+	            exluirProduto ()
+
+	      } senao se (opcao == "4") {
+			  atualizarProduto ()
+
+	      } senao se (opcao == "5") {
+			escreva ("Programa Encerrado!")
 	            pare
-	        } senao {
+	      } senao {
 	            escreva("Opção inválida!\n")
-	        }
+	      }
 	
 	        u.aguarde(2000)
 	        limpa()
