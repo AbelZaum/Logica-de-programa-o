@@ -6,7 +6,8 @@ programa
 	cadeia produto[MAX]
 	inteiro n = 0
 	inteiro indice	
-		
+	cadeia novoValor	
+	
 	funcao inserirProduto() {
 	    se (n < MAX) {
 	        escreva("Insira o nome do produto: ")
@@ -48,8 +49,6 @@ programa
 
 	}
 	funcao atualizarProduto () {
-
-		cadeia novoValor
 		
 		escreva ("Digite o indice do produto que deseja atualizar: ")
 		leia (indice)
@@ -67,6 +66,45 @@ programa
 		}
 
 	}
+	funcao imprimirCrescente () {
+
+		se (n == 0) {
+
+			escreva ("\nNenhum dado inserido!\n")	
+		
+		} senao {
+
+			escreva ("\nProdutos na ordem crescente\n")
+
+			para (inteiro i = 0; i < n; i++) {
+			
+			se (produto [i] != "") {
+				escreva ("Indice: " + i + " Produto: " + produto[i] + "\n") 
+			
+		    }
+		  }
+	    }
+	}
+	funcao imprimirDecrescente () {
+
+		se (n == 0) {
+
+			escreva ("\nNenhum dado inserido!\n")
+		
+		} senao {
+
+			escreva ("\nProdutos na ordem decrescente\n")
+
+		 para (inteiro i = n - 1; i >= 0; i--) {
+
+			se (produto [i] != "") {
+				escreva ("Indice: " + i + " Produto: " + produto[i] + "\n") 
+				
+			}
+		 }
+	   }	 	
+	 }
+			
 	funcao inicio() {
 	    cadeia opcao
 	    
@@ -76,7 +114,9 @@ programa
 	        escreva("2 - Exibir Produtos\n")
 	        escreva("3 - Excluir o Produto\n")
 	        escreva("4 - Atualizar o Produto\n")
-	        escreva("5 - Encerrar Programa\n")
+	        escreva("5 - Produtos na ordem crescente\n")
+	        escreva("6 - Produtos na ordem decrescente\n")
+	        escreva("7 - Encerrar Programa\n") 
 	        escreva("Escolha uma opção: ")
 	        
 	        leia(opcao)
@@ -92,13 +132,19 @@ programa
 			  atualizarProduto ()
 
 	      } senao se (opcao == "5") {
+			  imprimirCrescente ()
+
+		 } senao se (opcao == "6") {
+			 imprimirDecrescente ()
+ 
+		 } senao se (opcao == "7") {
 			escreva ("Programa Encerrado!")
 	            pare
 	      } senao {
 	            escreva("Opção inválida!\n")
 	      }
 	
-	        u.aguarde(2000)
+	        u.aguarde(3000)
 	        limpa()
 	    }
 	}
