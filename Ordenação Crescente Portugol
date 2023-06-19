@@ -5,7 +5,7 @@ programa
 	{
 		//--VARIAVEIS
 		inteiro numeros [13] = {10,9,80,72,74,5,62,36,44,7,3,17,66} 
-		inteiro auxiliar
+		inteiro numeroMaior
 
 		//--ORDENA EM ORDEM CRESCENTE
 		para (inteiro i = 0; i <= 12; i++) {
@@ -13,9 +13,9 @@ programa
 			para (inteiro j = i; j <= 12; j++) {
 
 				se (numeros [i] > numeros [j]) {
-					auxiliar = numeros [i]
+					numeroMaior = numeros [i]
 					numeros [i] = numeros [j]
-					numeros [j] = auxiliar		
+					numeros [j] = numeroMaior		
 			}
 			
 		}
