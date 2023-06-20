@@ -16,16 +16,22 @@ programa
 					numeroMaior = numeros [i]
 					numeros [i] = numeros [j]
 					numeros [j] = numeroMaior		
-			}
-			
-		}
-			
+			}	
+		}		
 	}
-
+			escreva ("{")
 		//--IMPRIME EM ORDEM CRESCENTE
 		para (inteiro i = 0; i <= 12; i++) {
 
-			escreva (numeros [i] + " ")
+			se (i > 0) {
+
+				escreva (",")
+			}
+			escreva (numeros [i])
+				
 		}
+			escreva ("}")
+
 	}
-}
+}	
+	
