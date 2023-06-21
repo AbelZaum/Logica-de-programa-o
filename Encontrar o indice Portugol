@@ -1,0 +1,24 @@
+programa
+{
+	
+inclua biblioteca Texto --> tx
+	
+	funcao inicio()
+	{
+		cadeia letra [10] = {"C", "F", "G", "A", "D", "B", "E", "I", "H", "J"}
+		cadeia pesquisa
+		
+		
+		escreva ("Digite a letra que voce deseja buscar: ")
+		leia (pesquisa)
+
+		pesquisa = tx.caixa_alta(pesquisa)
+
+		para (inteiro i = 0; i <= 9; i++) {
+			se (letra [i] == pesquisa) {
+				escreva ("A letra " + pesquisa + " ,Foi encontrada no indice " + i)
+		
+			}
+		}
+	}
+}
