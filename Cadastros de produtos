@@ -7,11 +7,15 @@ programa
 	inteiro n = 0
 	inteiro indice	
 	cadeia novoValor	
+	cadeia classificacao [MAX]
 	
 	funcao inserirProduto() {
 	    se (n < MAX) {
 	        escreva("Insira o nome do produto: ")
 	        leia(produto[n])
+	        
+	        escreva ("Escreva a classificação do produto (A,B ou C): ")
+		   leia (classificacao [n])
 	        n++
 	        escreva("\nProduto inserido com sucesso!\n")
 	    } senao {
@@ -25,12 +29,12 @@ programa
 	    } senao {
 	        escreva("\n-----Produtos-----\n")
 	        para (inteiro i = 0; i < n; i++) {
-	            escreva ("Produto: " + produto[i] + "\n")
+	            escreva ("Produto: " + produto[i] + "\nClassificação: " + classificacao [i] + "\n")
 	       
 	        se (produto [i] != "") {
 				escreva ("Indice: " + i + "\n")       	
 	         }	        	        	        
-	      }
+	       }
 	    }
 	}
 
@@ -40,7 +44,8 @@ programa
 		leia (indice)
 
 		se (indice >= 0 e indice < n) {
-			produto [indice] = ""
+			produto [indice] = ""  
+			classificacao [indice] = ""
 			escreva ("Produto excluido com sucesso!\n")	
 		} senao {
 			escreva ("Indice invalido!\n")			
