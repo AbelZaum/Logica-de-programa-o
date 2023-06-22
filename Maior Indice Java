@@ -1,0 +1,24 @@
+package vetoresposicao;
+
+import javax.swing.JOptionPane;
+
+public class VetoresPosicao {
+
+    public static void main(String[] args) {
+
+        int[] vetor = new int[8];
+        int maior = 0, indice = 0;
+
+        for (int i = 0; i < 8; i++) { 
+            vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe um numero"));
+            if (maior < vetor[i]) {
+                maior = vetor[i];
+                indice = i;
+
+            }
+        }
+        JOptionPane.showMessageDialog(null, "O maior valor é: " + maior + "\nE esta no indice: " + indice);
+
+    }
+
+}
