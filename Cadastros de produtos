@@ -6,7 +6,7 @@ programa
 	cadeia produto[MAX]
 	inteiro n = 0
 	inteiro indice	
-	cadeia novoValor	
+	cadeia novoValor, novoClassificacao	
 	cadeia classificacao [MAX]
 	
 	funcao inserirProduto() {
@@ -61,6 +61,9 @@ programa
 		se (indice >= 0 e indice < n) {
 			escreva ("Digite o novo valor para o produto: ")
 			leia (novoValor)
+			escreva ("Escreva a nova classificação do produto (A,B ou C): ")
+		   	leia (novoClassificacao)
+			classificacao [indice] = novoClassificacao
 			produto [indice] = novoValor
 			escreva ("Produto atualizado com sucesso!\n")
 	
