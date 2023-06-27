@@ -2,7 +2,8 @@ programa
 {
 
 	inclua biblioteca Util --> u
-
+	
+	cadeia loginCorreto = "adm", senhaCorreta = "adm"
 	inteiro escolhaMenu = 0
 	cadeia produtos[999], classificacao[999]
 	inteiro contador = -1
@@ -10,8 +11,28 @@ programa
 	inteiro indice = 0, testeIndice
 	cadeia testeProduto = "", testeClassificacao = "", enter = "", resposta1
 	
+	funcao login () 
+	{
+		cadeia usuario_login, usuario_senha
+		
+		escreva ("Informe o login: ")
+		leia (usuario_login)
+
+		escreva ("Informe a senha: ")
+		leia (usuario_senha)
+
+		escreva ("\nLogin inserido com sucesso!\n")
+
+		se (usuario_login != loginCorreto e usuario_senha != senhaCorreta) {
+
+			escreva ("Login ou senha incorretos... Encerrando")
+			encerrar ()
+		}	
+	}
+	
 	funcao inicio()
 	{
+		login ()
 
 		enquanto (resposta != 4) {
 
@@ -78,6 +99,8 @@ programa
 			escreva("Insira uma classificacao: ")
 			leia(testeClassificacao)
 
+			escreva ("\nProduto inserido com sucesso!\n")
+			
 			se (testeProduto == "") {
 
 				escreva("Indice Invalido") 
@@ -103,7 +126,7 @@ programa
 		
 			escreva("Qual indice deseja atualizar? ")
 			leia(indice)
-
+			
 			se (indice < 0 ou indice > contador) {
 
 				escreva("Indice Invalido")
@@ -114,7 +137,7 @@ programa
 
 		escreva(produtos[indice] + " (indice " + indice + ") = ")
 		leia(produtos[indice])
-		
+		escreva ("\nAtualizado com sucesso!\n")
 	}
 	
 	funcao ordemIndice() {
@@ -162,6 +185,8 @@ programa
 		escreva("Qual indice voce quer excluir? ")
 		leia(indice)
 
+		escreva ("\nExcluido com sucesso!\n")
+		
 		produtos[indice] = ""
 
 		classificacao[indice] = ""
