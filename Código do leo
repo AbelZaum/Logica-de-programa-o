@@ -24,8 +24,11 @@ programa
 		escreva("Informe a senha: ")
 		leia(usuario_senha)
 
+		se (usuario_login == loginCorreto e usuario_senha == senhaCorreta) {
+		
 		escreva("\nLogin inserido com sucesso!\n")
-
+		}
+		
 		se (usuario_login != loginCorreto ou usuario_senha != senhaCorreta) {
 
 			escreva("Login ou senha incorretos... Encerrando")
@@ -149,8 +152,20 @@ programa
 		faca {
 
 			escreva("\nQual indice deseja atualizar? ")
-			leia(indice)
+			leia(texto)
 	
+			
+		se (texto == "") {
+
+			escreva("Indice Inválido")
+
+			retorne
+			
+		}
+		
+		indice = tp.cadeia_para_inteiro(texto, 10)
+			
+		
 			se (indice < 0 ou indice > contador) {
 
 				escreva("Indice Invalido")
@@ -269,5 +284,5 @@ programa
 			leia (enter)
 		
 	}
-		
+	
 }
