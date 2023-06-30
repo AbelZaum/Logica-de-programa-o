@@ -271,19 +271,28 @@ programa
 
 		entradaClassificacao = tx.caixa_alta(entradaClassificacao)
 
-		escreva ("\nProdutos com a classificação " + entradaClassificacao + "\n\n")
+		se (entradaClassificacao == "A" ou entradaClassificacao == "B" ou entradaClassificacao == "C") {
+		
+			escreva ("\nProdutos com a classificação " + entradaClassificacao + "\n\n")
 
-		para (inteiro i = 0; i <= contador; i++) {
+			para (inteiro i = 0; i <= contador; i++) {
 
-			se (classificacao [i] == entradaClassificacao) {
+				se (classificacao [i] == entradaClassificacao) {
 
-				escreva ("Produto: " + produtos [i] + ", indice " + i + "\nClassificação " + classificacao [i] + "\n\n")
-				encontrados = 1	
+					escreva ("Produto: " + produtos [i] + ", indice " + i + "\nClassificação " + classificacao [i] + "\n\n")
+					encontrados = 1	
+			
+					se (encontrados == 0) {
+
+						escreva ("Nenhum produto encontrado na classificação " + entradaClassificacao + "\n\n")	
+				
+					}
+				}
 			}
-		}
-		se (encontrados == 0) {
+		} senao {
 
-			escreva ("Nenhum produto encontrado na classificação " + entradaClassificacao + "\n\n")	
+			escreva("Classificação Invalida!\n")
+			
 		}
 			escreva ("Precione enter para voltar ao menu: ")
 			leia (teclaEnter)
@@ -296,5 +305,4 @@ programa
 		leia(teclaEnter)
 		
 	}
-	
 }
