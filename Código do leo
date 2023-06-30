@@ -9,9 +9,8 @@ programa
 	cadeia escolhaMenu = "0"
 	cadeia produtos[999], classificacao[999]
 	inteiro contador = -1
-	cadeia resposta = ""
 	inteiro indice = 0, testeIndice
-	cadeia testeProduto = "", testeClassificacao = "", enter = "", resposta1
+	cadeia testeProduto = "", testeClassificacao = "", teclaEnter = "", resposta = "", resposta1 = ""
 	cadeia texto
 	
 	funcao login () 
@@ -63,7 +62,7 @@ programa
 			
 			} senao se (escolhaMenu == "4") {
 
-				
+				imprimir()
 			
 			} senao se (escolhaMenu == "5") {
 				
@@ -180,14 +179,27 @@ programa
 		escreva ("\nAtualizado com sucesso!\n")
 		
 	}
+
+	funcao imprimir() {
+
+		se (resposta1 == "D" ou resposta1 == "d") {
+
+			para (inteiro i = contador; i >= 0; i--) {
+
+				se (produtos[i] == "") {
 	
-	funcao ordemIndice() {
+				} senao {
 
-		escreva("Deseja exibir os indices de forma crescente ou decrescente? (C/D) ")
-		leia(resposta1)
+					escreva("Produto: " + produtos[i] + ", indice " + i + "\nClassificacao: " + classificacao[i] + "\n\n")
+					
+				}
+				
+			}
 
-		se (resposta1 == "C" ou resposta1 == "c") {
+			enter()
 
+		} senao {
+			
 			para (inteiro i = 0; i <= contador; i++) {
 
 				se (produtos[i] == "") {
@@ -199,25 +211,18 @@ programa
 				}
 				
 			}
-			
-		} senao {
 
-			para (inteiro i = contador; i >= 0; i--) {
-
-				se (produtos[i] == "") {
-	
-				} senao {
-
-					escreva("Produto: " + produtos[i] + ", indice " + i + "\nClassificacao: " + classificacao[i] + "\n\n")
-					
-				}
-			
-			}
-		
+		enter()
+				
 		}
+	}
+	
+	funcao ordemIndice() {
 
-		escreva("Pressione enter para prosseguir: ")
-		leia(enter)
+		escreva("Deseja exibir os indices de forma crescente ou decrescente? (C/D) ")
+		leia(resposta1)
+
+		imprimir()
 
 	}
 
@@ -281,7 +286,14 @@ programa
 			escreva ("Nenhum produto encontrado na classificação " + entradaClassificacao + "\n\n")	
 		}
 			escreva ("Precione enter para voltar ao menu: ")
-			leia (enter)
+			leia (teclaEnter)
+		
+	}
+
+	funcao enter() {
+
+		escreva ("Precione enter para voltar ao menu: ")
+		leia(teclaEnter)
 		
 	}
 	
