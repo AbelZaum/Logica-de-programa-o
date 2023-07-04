@@ -8,8 +8,8 @@ programa
 	const cadeia loginCorreto = "adm", senhaCorreta = "adm"
 	cadeia escolhaMenu = "0"
 	cadeia produtos[999], classificacao[999], testeProduto, entradaClassificacao
-	inteiro contador = -1, quantidadeEstoque[999], quantidadeProduto
-	inteiro indice = 0, testeIndice, encontrados, totalEstoque = 0
+	inteiro contador = -1, contador1 = -1, quantidadeEstoque[999], quantidadeProduto
+	inteiro indice = 0, testeIndice, encontrados
 	cadeia produto = "", testeClassificacao = "", teclaEnter = "", resposta = "", resposta1 = ""
 	cadeia texto, entradaIndice, entradaQuantidade = "", entradaIndice2, entradaQuantidade2 = ""
 	
@@ -39,7 +39,7 @@ programa
 	{
 		login ()
 
-		enquanto (resposta != "10") {
+		enquanto (resposta != "9") {
 
 			
 			u.aguarde(2000)
@@ -81,11 +81,13 @@ programa
 			   
 			    removerEstoque()
 			    
-			}  senao se (escolhaMenu == "9"){
-				
-				saldoProduto ()        
+			} senao se (escolhaMenu == "9") {
 			    
-			} senao se (escolhaMenu == "10") {
+			    saldoEstoque()
+			    
+			}
+			
+			  senao se (escolhaMenu == "10") {
 				
 				encerrar()
 			
@@ -93,11 +95,12 @@ programa
 			
 				escreva("Opcao invalida")
 			
-			}senao {
+			} senao {
 
 				escreva("Opcao invalida")
 				u.aguarde(3000)
-	        		limpa()
+	        	limpa()
+	        	
 			}
 		}
 
@@ -117,8 +120,8 @@ programa
 		escreva("6 - Exibir produto por classificação\n")
 		escreva("7 - Adicionar estoque\n")
 		escreva("8 - Remover estoque\n")
-		escreva("9 - Exibir o estoque\n")
-		escreva("10 - Encerrar programa\n")
+		escreva("9 - Saldo estoque\n")
+		escreva("10 - Encerrar\n")
 		escreva("O que deseja fazer? ")
 			
 	}
@@ -182,7 +185,7 @@ programa
 			se (indice < 0 ou indice > contador) {
 
 				escreva("Indice Invalido")
-				u.aguarde (1500)
+				u.aguarde (2000)
 				retorne
 			}
 		
@@ -203,18 +206,27 @@ programa
 
 	funcao imprimir() {
 
+        contador1 = -1
+
 		se (resposta1 == "D" ou resposta1 == "d") {
 
 			para (inteiro i = contador; i >= 0; i--) {
 
 				se (produtos[i] == "") {
-	
+	                
+	                contador1++
+	                
 				} senao {
 
 					escreva("Produto: " + produtos[i] + ", indice " + i + "\nClassificacao: " + classificacao[i] + "\n\n")
 					
 				}
-				 	
+				
+			    se (contador1 == contador) {
+			        
+			        escreva("Nenhum produto cadastrado\n")
+			        
+			    }
 			}
 
 			enter()
@@ -224,12 +236,20 @@ programa
 			para (inteiro i = 0; i <= contador; i++) {
 
 				se (produtos[i] == "") {
-	
+	                
+	                contador1++
+	                
 				} senao {
 
 					escreva("Produto: " + produtos[i] + ", indice " + i + "\nClassificacao: " + classificacao[i] + "\n\n")
 					
 				}
+				
+			    se (contador1 == contador) {
+			        
+			        escreva("Nenhum produto cadastrado\n")
+				
+			}
 				
 			}
 
@@ -291,7 +311,7 @@ programa
 
 	funcao encerrar() {
 
-		resposta = "10"
+		resposta = "9"
 		
 	}
 	funcao exibirPorClassificacao() 
@@ -325,7 +345,8 @@ programa
 			escreva("Classificação Invalida!\n")
 			
 		}
-			enter ()
+			escreva ("Precione enter para voltar ao menu: ")
+			leia (teclaEnter)
 		
 	}
 	
@@ -340,7 +361,8 @@ programa
 				
 				escreva("Índice Inválido!")
 			
-				enter ()
+				escreva("\nPressione enter para voltar ao menu: ")
+				leia(teclaEnter)
 				
 				limpa()
 				
@@ -357,16 +379,14 @@ programa
 	          
 	      } senao {	
 	           
-	          escreva("Quantas unidades deseja inserir? ")
-        		leia(entradaQuantidade)
+	          escreva(produtos[testeIndice] + ": Quantas unidades deseja inserir? ")
+        	  	leia(entradaQuantidade)
         
-
 		        enquanto (entradaQuantidade == "") {
 		            
 		            se (entradaQuantidade == "") {
 		                
 		                escreva ("Unidade Inválida!")
-		                
 		                
 		            }
 					escreva("\nDigite a unidade válida: ")
@@ -379,10 +399,12 @@ programa
 		
 		         quantidadeEstoque[testeIndice] += quantidadeProduto 
 		
-		         escreva("Quantidade: " + quantidadeEstoque[testeIndice])
+		         escreva("Quantidade atual: " + quantidadeEstoque[testeIndice])
+		         
 		    } senao {
 
-				escreva ("Classificação Invalida!")
+				escreva ("Unidade Invalida!")
+				
 		    }   		   
 		 }
 	}
@@ -390,22 +412,23 @@ programa
 	funcao removerEstoque() {
 	    
 	     escreva("Qual indice você quer remover uma quantidade? ")
-	     leia(entradaIndice2)
+	     leia(entradaIndice)
 	      
-	      enquanto (entradaIndice2 == "") {
+	      enquanto (entradaIndice == "") {
 
-			se (entradaIndice2 == "") {
+			se (entradaIndice == "") {
 				
 				escreva("Índice Inválido!")
 			
-				enter ()
+				escreva("\nPressione enter para voltar ao menu: ")
+				leia(teclaEnter)
 				limpa()
 				retorne
 			}
 	
 	      }
 		
-		 testeIndice = tp.cadeia_para_inteiro(entradaIndice2, 10)
+		 testeIndice = tp.cadeia_para_inteiro(entradaIndice, 10)
 	      
 	     se (testeIndice <= -1 ou testeIndice > contador) {
 	          
@@ -414,20 +437,20 @@ programa
 	      } senao {
 	          
 	          escreva("Quantas unidades deseja remover? ")
-	          leia(entradaQuantidade2)
+	          leia(entradaQuantidade)
 
-			enquanto (entradaQuantidade2 == "") {
+			enquanto (entradaQuantidade == "") {
 		            
-		            se (entradaQuantidade2 == "") {
+		            se (entradaQuantidade == "") {
 		                
 		                escreva ("Unidade Inválida!")
 		                      
 		            }
 					 escreva("\nDigite a unidade válida: ")
-          			 leia(entradaQuantidade2)
+          			 leia(entradaQuantidade)
 		        }
 		
-		         quantidadeProduto = tp.cadeia_para_inteiro(entradaQuantidade2, 10)
+		         quantidadeProduto = tp.cadeia_para_inteiro(entradaQuantidade, 10)
 
 				se (quantidadeProduto >= 0) {
 
@@ -437,27 +460,39 @@ programa
 		         
 		    } senao {
 
-				escreva ("Classificação Invalida!")
+				escreva ("Unidade Invalida!")
 
 		    }	   
-		 }
+		}
 	}
-
-	funcao saldoProduto() {
-    
-    		escreva("\nSaldo dos Produtos\n")
-    
-    		para (inteiro i = 0; i <= contador; i++) {
-        		escreva(produtos[i] + ": " + quantidadeEstoque[i] + "\n")
-        		totalEstoque += quantidadeEstoque[i]
-    }
-   
-	enter ()	
+	
+	funcao saldoEstoque() {
+	    
+	    contador1 = -1
+	    
+	    para (inteiro i = 0; i <= contador; i++) {
+	        
+	        se (produtos[i] == "") {
+	            contador1++
+	        } senao {
+	        
+	            escreva("Saldo dos Produtos\n\n")
+	            escreva(produtos[i] + ": " + quantidadeEstoque[i] + "\n")
+	            
+	        }
+	        
+	        se (contador1 == contador) {
+			        
+			    escreva("Nenhum produto cadastrado\n")
+				
+			}
+	        
+	    }
 	}
-	     
+     
 	funcao enter() {
 
-		escreva ("\nPrecione enter para voltar ao menu: ")
+		escreva ("Precione enter para voltar ao menu: ")
 		leia(teclaEnter)
 		
 	}
