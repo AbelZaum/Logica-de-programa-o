@@ -7,10 +7,10 @@ programa
 	
 	const cadeia loginCorreto = "adm", senhaCorreta = "adm"
 	cadeia escolhaMenu = "0"
-	cadeia produtos[999], classificacao[999]
+	cadeia produtos[999], classificacao[999], testeProduto, entradaClassificacao
 	inteiro contador = -1, quantidadeEstoque[999], quantidadeProduto
-	inteiro indice = 0, testeIndice
-	cadeia testeProduto = "", testeClassificacao = "", teclaEnter = "", resposta = "", resposta1 = ""
+	inteiro indice = 0, testeIndice, encontrados
+	cadeia produto = "", testeClassificacao = "", teclaEnter = "", resposta = "", resposta1 = ""
 	cadeia texto, entradaIndice, entradaQuantidade = "", entradaIndice2, entradaQuantidade2 = ""
 	
 	funcao login () 
@@ -126,15 +126,15 @@ programa
 		faca {
 		
 			escreva("\nInsira um produto: ")
-			leia(testeProduto)
+			leia(produto)
 			
-			se (testeProduto == "") {
+			se (produto == "") {
 
 				escreva("Descrição Inválida") 
 		 		
 			}
 	
-		} enquanto (testeProduto == "")
+		} enquanto (produto == "")
 
 		escreva ("\nProduto inserido com sucesso!\n")
 
@@ -144,13 +144,14 @@ programa
 			escreva("\n(A - primeira linha)")
 			escreva("\n(B - linha regular)")
 			escreva("\n(C - segunda linha)\n")
+			escreva ("A, B ou C: ")
 			leia(testeClassificacao)
 
 			testeClassificacao = tx.caixa_alta(testeClassificacao)
 			
 		} enquanto (testeClassificacao != "A" e testeClassificacao != "B" e testeClassificacao != "C")
 
-		produtos[contador] = testeProduto
+		produtos[contador] = produto
 		classificacao[contador] = testeClassificacao
 		
 	}
@@ -183,8 +184,15 @@ programa
 		
 		} enquanto (indice < 0 ou indice > contador)
 
-		escreva(produtos[indice] + " (indice " + indice + ") = ")
+		testeProduto = (produtos[indice])
+
+		faca {
+		
+		escreva(testeProduto + " (indice " + indice + ") = ")
 		leia(produtos[indice])
+			
+		} enquanto (produtos[indice] == "")
+		
 		escreva ("\nAtualizado com sucesso!\n")
 		
 	}
@@ -231,14 +239,12 @@ programa
 		escreva("Deseja exibir os indices de forma crescente ou decrescente? (C/D) ")
 		leia(resposta1)
 
-		
-		enquanto (resposta1 != "C" e resposta1 != "c" e resposta1 != "D" e resposta1 != "d") {
+			enquanto (resposta1 != "C" e resposta1 != "c" e resposta1 != "D" e resposta1 != "d") {
 			escreva("Resposta inválida. Digite 'C' ou 'D': ")
 			leia(resposta1)
 			
 		}
 			imprimir()
-
 	}
 
 	funcao excluir() {
@@ -255,6 +261,14 @@ programa
 		}
 		
 		indice = tp.cadeia_para_inteiro(texto, 10)
+
+		se (indice <= -1) {
+
+			escreva("Indice Inválido")
+			
+			retorne
+			
+		}
 
 		se (produtos[indice] == "") {
 
@@ -278,32 +292,30 @@ programa
 	}
 	funcao exibirPorClassificacao() 
 	{
-		cadeia entradaClassificacao
-		inteiro encontrados = 0
 		
 		escreva ("\n\nDigite a classificação desejada: ")
 		leia(entradaClassificacao)
 
 		entradaClassificacao = tx.caixa_alta(entradaClassificacao)
-
+		encontrados = 0
+		
 		se (entradaClassificacao == "A" ou entradaClassificacao == "B" ou entradaClassificacao == "C") {
 		
 			escreva ("\nProdutos com a classificação " + entradaClassificacao + "\n\n")
 
 			para (inteiro i = 0; i <= contador; i++) {
 
-				se (classificacao [i] == entradaClassificacao) {
+				se (classificacao[i] == entradaClassificacao) {
 
 					escreva ("Produto: " + produtos [i] + ", indice " + i + "\nClassificação " + classificacao [i] + "\n\n")
 					encontrados = 1	
-			
-					se (encontrados == 0) {
+				}
+				
+			}
+					 se (encontrados == 0) {
 
 						escreva ("Nenhum produto encontrado na classificação " + entradaClassificacao + "\n\n")	
-				
 					}
-				}
-			}
 		} senao {
 
 			escreva("Classificação Invalida!\n")
@@ -327,7 +339,9 @@ programa
 			
 				escreva("\nPressione enter para voltar ao menu: ")
 				leia(teclaEnter)
+				
 				limpa()
+				
 				retorne
 			}
 	
@@ -335,7 +349,7 @@ programa
 		
 		 testeIndice = tp.cadeia_para_inteiro(entradaIndice, 10)
 	         
-	      se (testeIndice == -1 ou testeIndice > contador) {
+	      se (testeIndice <= -1 ou testeIndice > contador) {
 	          
 	          escreva("Indice Inválido!")
 	          
@@ -358,11 +372,17 @@ programa
 		        }
 		
 		         quantidadeProduto = tp.cadeia_para_inteiro(entradaQuantidade, 10)
+
+				se (quantidadeProduto >= 0) {
 		
 		         quantidadeEstoque[testeIndice] += quantidadeProduto 
 		
 		         escreva("Quantidade: " + quantidadeEstoque[testeIndice])
-		    }	   
+		    } senao {
+
+				escreva ("Classificação Invalida!")
+		    }   		   
+		 }
 	}
 			           
 	funcao removerEstoque() {
@@ -386,7 +406,7 @@ programa
 		
 		 testeIndice = tp.cadeia_para_inteiro(entradaIndice2, 10)
 	      
-	     se (testeIndice == -1 ou testeIndice > contador) {
+	     se (testeIndice <= -1 ou testeIndice > contador) {
 	          
 	          escreva("Indice Inválido!")
 	          
@@ -402,16 +422,23 @@ programa
 		                escreva ("Unidade Inválida!")
 		                      
 		            }
-					escreva("\nDigite a unidade válida: ")
+					 escreva("\nDigite a unidade válida: ")
           			 leia(entradaQuantidade2)
 		        }
 		
 		         quantidadeProduto = tp.cadeia_para_inteiro(entradaQuantidade2, 10)
-		
+
+				se (quantidadeProduto >= 0) {
+
 		         quantidadeEstoque[testeIndice] -= quantidadeProduto 
 		
 		         escreva("Quantidade: " + quantidadeEstoque[testeIndice])
+		    } senao {
+
+				escreva ("Classificação Invalida!")
+
 		    }	   
+		 }
 	}
      
 	funcao enter() {
