@@ -1,0 +1,68 @@
+package revisaoconteudo;
+
+import javax.swing.JOptionPane;
+
+public class RevisaoConteudo {
+
+    public static void main(String[] args) {
+
+        //-- ARRAYS DE STRING CONTENDO AS OPCÕES DE MENU
+        String[] opcao = {"Celcius para Fahrenheit", "Quilometros para Milhas"};
+
+        //-- MOSTRA UMA INTERFACE GRAFICA COM AS OPÇÕES DO MENU A OPÇÃO ESCOLHIDA PELO USUARIO EM UMA VARIAVEL
+        String saidaEscolha = (String) JOptionPane.showInputDialog(null, "Selecione uma opção:", "Menu de Conversões", JOptionPane.QUESTION_MESSAGE, null, opcao, opcao[0]);
+
+        //-- VARIAVEL PARA GUARDAR A ESCOLHA DO USUARIO COMO UM NUMERO (1 PARA A PRIMEIRA OPCÃO, 2 PARA A SEGUNDA)
+        int escolha = -1;
+        
+        //-- LOOP PARA IDENTIFICAR O NUMERO DA OPÇÃO ESCOLHIDA PELO USUARIO NO ARRAY ESCOLHIDO PELO USUARIO
+        for (int i = 0; i < opcao.length; i++) {
+
+            if (saidaEscolha.equals(opcao[i])) {
+                escolha = i + 1;
+                break;
+            }
+
+        }
+        //-- ESTRUTURA SWITCH PARA EXECUTAR A AÇÃO CORRESPONDENTE A OPÇÃO ESCOLHIDA PELO USUARIO
+        switch (escolha) {
+            case 1:
+                //-- SOLICITA AO USUARIO PARA DIGITAR A TEMPERATURA EM CELSIUS USANDO JOptionPane E GUARDA O VALOR EM UMA VARIAVEL
+                String saidaCelsius = JOptionPane.showInputDialog("Digite a temperatura em Celsius:");
+                
+                //-- CONVERTE O VALOR  DIGITADO PARA UM NUMERO DE PONTO FLUTUANTE (DOUBLE)
+                double celsius = Double.parseDouble(saidaCelsius);
+                
+                //-- CHAMA O MÉTODO CELSIUSPARAFAHRENHEIT PARA FAZER A CONVERSÃO
+                double fahrenheit = CelsiusParaFahrenheit(celsius);
+                
+                //-- MOSTRA O RESULTADO DA CONVERSÃO
+                JOptionPane.showMessageDialog(null, celsius + " graus Celsius é igual a " + fahrenheit + " graus Fahrenheit.");
+                break;
+            case 2:
+                //-- SOLICITA AO USUARIO PARA DIGITAR A DISTANCIA EM QUILOMETROS GUARDANDO O VALOR EM UMA VARIAVEL
+                String saidaKM = JOptionPane.showInputDialog("Digite a Distancia em quilometros:");
+                
+                //-- CONVERTE O VALOR  DIGITADO PARA UM NUMERO DE PONTO FLUTUANTE (DOUBLE)
+                double km = Double.parseDouble(saidaKM);
+                //-- CHAMA O MÉTODO QUILOMETROSPARAMILHAS PARA FAZER A CONVERSÃO
+                double milhas = quilometrosParaMilhas(km);
+                //-- MOSTRA O RESULTADO DA CONVERSÃO
+                JOptionPane.showMessageDialog(null, km + " quilômetros é igual a " + milhas + " milhas.");
+                break;
+
+            default:
+                            
+            break;
+        }
+
+    }
+    //-- METODO PARA CONVERTER CELSIUS PARA FAHRENHEIT
+    private static double CelsiusParaFahrenheit(double celsius) {
+        return celsius * 9 / 5 + 32;
+    }
+    //-- METODO PARA CONVERTER QUILOMETROS PARA MILHAS
+    private static double quilometrosParaMilhas(double km) {
+        return km * 0.621371;
+    }
+}
