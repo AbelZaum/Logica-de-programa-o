@@ -3,45 +3,55 @@ package conteudorevisao;
 import javax.swing.JOptionPane;
 
 public class ConteudoRevisao {
+        
+    /*  Situação Problema: O programa ira ajudar um estudante a organizar a sua semana de estudos.
+    O estudante ira informar o dia da semana em que estamos, digitando um número de 1 a 7. Em seguida, 
+    o programa ira exibir uma mensagem com a disciplina que o estudante deve estudar naquele dia. Seguindo o seguinte cronograma:
 
+    Segunda-Feira: Matemática
+    Terça-Feira: Português
+    Quarta-Feira: Ciências
+    Quinta-Feira: História
+    Sexta-Feira: Inglês
+    Sabado: Descanso
+    Domingo: Descanso */
+    
     public static void main(String[] args) {
 
-        String[] diasDaSemana = {"Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
-        String saidaNumeros = JOptionPane.showInputDialog(null, "Digite um número de 1 a 7", "Dias da Semana", JOptionPane.QUESTION_MESSAGE);
-        int numero = Integer.parseInt(saidaNumeros);
-        String diaSemana;
-
-        switch (numero) {
+        String disciplinas;
+         //-- Solicita ao usuário para digitar um número de 1 a 7
+        String saidaDiaSemana = JOptionPane.showInputDialog(null, "Digite um número de 1 a 7 para saber a disciplina do dia ", "Dias da Semana", JOptionPane.QUESTION_MESSAGE);
+         //-- Converte o valor digitado para um número inteiro
+        int numeroDiaSemana = Integer.parseInt(saidaDiaSemana);
+        //-- Verifica o número da semana usando swtich case
+        switch (numeroDiaSemana) {
             case 1:
-                diaSemana = diasDaSemana[0];
+                disciplinas = "Matemática";
                 break;
-
             case 2:
-                diaSemana = diasDaSemana[1];
+                disciplinas = "Português";
                 break;
-
             case 3:
-                diaSemana = diasDaSemana[2];
+                disciplinas = "Ciências";
                 break;
             case 4:
-                diaSemana = diasDaSemana[3];
+                disciplinas = "História";
                 break;
             case 5:
-                diaSemana = diasDaSemana[4];
+                disciplinas = "Inglês";
                 break;
             case 6:
-                diaSemana = diasDaSemana[5];
+                disciplinas = "Descanso";
                 break;
             case 7:
-                diaSemana = diasDaSemana[6];
+                disciplinas = "Descanso";
                 break;
             default:
-                diaSemana = "Número Inválido";
+                disciplinas = "Número Inválido!";
                 break;
         }
-
-        JOptionPane.showMessageDialog(null, "O dia da semana correspondente é " + diaSemana, "Dias da Semana", JOptionPane.INFORMATION_MESSAGE);
-
+         //-- Exibe a disciplina correspondente ao dia da semana informado pelo estudante
+        JOptionPane.showMessageDialog(null, "Para o dia " + numeroDiaSemana + " da semana, estude a disciplina: " + disciplinas , "Dias da Semana", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }
