@@ -1,57 +1,62 @@
-package conteudorevisao;
 
 import javax.swing.JOptionPane;
 
-public class ConteudoRevisao {
-        
-    /*  Situação Problema: O programa ira ajudar um estudante a organizar a sua semana de estudos.
-    O estudante ira informar o dia da semana em que estamos, digitando um número de 1 a 7. Em seguida, 
-    o programa ira exibir uma mensagem com a disciplina que o estudante deve estudar naquele dia. Seguindo o seguinte cronograma:
+public class CronogramaAtividades {
 
-    Segunda-Feira: Matemática
-    Terça-Feira: Português
-    Quarta-Feira: Ciências
-    Quinta-Feira: História
-    Sexta-Feira: Inglês
-    Sabado: Descanso
-    Domingo: Descanso */
+    /*Situação Problema: Ana é uma estudante universitária com uma rotina agitada. 
+Ela estuda em tempo integral e também é voluntária em um abrigo de animais. 
+Ana deseja usar um programa para ajudá-la a organizar suas atividades diárias e ainda planejar suas tarefas para o dia seguinte. 
+O programa deve considerar as aulas, o tempo para estudar, as atividades no abrigo e ainda reservar momentos para descanso e lazer. */
     
     public static void main(String[] args) {
+        // Solicita a Ana para digitar um número de 1 a 7 usando JOptionPane e guarda o valor em uma variável
+        String saidaDiaSemana = JOptionPane.showInputDialog("Oi, Ana! Digite o número de 1 a 7 para ver suas atividades do dia:");
 
-        String disciplinas;
-         //-- Solicita ao usuário para digitar um número de 1 a 7
-        String saidaDiaSemana = JOptionPane.showInputDialog(null, "Digite um número de 1 a 7 para saber a disciplina do dia ", "Dias da Semana", JOptionPane.QUESTION_MESSAGE);
-         //-- Converte o valor digitado para um número inteiro
+        // Converte o valor digitado para um número inteiro
         int numeroDiaSemana = Integer.parseInt(saidaDiaSemana);
-        //-- Verifica o número da semana usando swtich case
+
+        // Inicializa uma variável para armazenar as atividades do dia e do próximo dia
+        String atividadesDoDia = "";
+        String atividadesDoProximoDia = "";
+
+        // Verifica o número da semana usando switch case
         switch (numeroDiaSemana) {
             case 1:
-                disciplinas = "Matemática";
+                atividadesDoDia = "Dia de descanso e lazer.";
+                atividadesDoProximoDia = "No próximo dia, continue aproveitando o descanso.";
                 break;
             case 2:
-                disciplinas = "Português";
+                atividadesDoDia = "Aulas de Matemática e esportes à tarde.";
+                atividadesDoProximoDia = "No próximo dia, reserve tempo para estudar Português.";
                 break;
             case 3:
-                disciplinas = "Ciências";
+                atividadesDoDia = "Estudo de Português pela manhã e experimentos de Ciências à tarde.";
+                atividadesDoProximoDia = "Amanhã, você terá tempo para se dedicar à História.";
                 break;
             case 4:
-                disciplinas = "História";
+                atividadesDoDia = "Tempo para estudar História e assistir a um documentário à noite.";
+                atividadesDoProximoDia = "No próximo dia, pratique conversação em Inglês.";
                 break;
             case 5:
-                disciplinas = "Inglês";
+                atividadesDoDia = "Praticar Inglês conversando online com amigos.";
+                atividadesDoProximoDia = "No próximo dia, faça uma atividade ao ar livre.";
                 break;
             case 6:
-                disciplinas = "Descanso";
+                atividadesDoDia = "Dia para atividades no abrigo de animais e relaxamento.";
+                atividadesDoProximoDia = "Amanhã, você terá tempo para assistir a um filme.";
                 break;
             case 7:
-                disciplinas = "Descanso";
+                atividadesDoDia = "Outro dia para descansar e recarregar as energias.";
+                atividadesDoProximoDia = "No próximo dia, continue aproveitando o descanso.";
                 break;
             default:
-                disciplinas = "Número Inválido!";
+                atividadesDoDia = "Número inválido. Digite um número de 1 a 7.";
+                atividadesDoProximoDia = "Por favor, insira um número válido.";
                 break;
         }
-         //-- Exibe a disciplina correspondente ao dia da semana informado pelo estudante
-        JOptionPane.showMessageDialog(null, "Para o dia " + numeroDiaSemana + " da semana, estude a disciplina: " + disciplinas , "Dias da Semana", JOptionPane.INFORMATION_MESSAGE);
-    }
 
+        // Exibe as atividades do dia e do próximo dia para Ana usando JOptionPane
+        JOptionPane.showMessageDialog(null, "Atividades para o dia " + numeroDiaSemana + " da semana:\n" + atividadesDoDia
+                + "\n\nAtividades para o próximo dia:\n" + atividadesDoProximoDia);
+    }
 }
