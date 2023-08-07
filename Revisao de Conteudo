@@ -9,9 +9,9 @@ Ana deseja usar um programa para ajudá-la a organizar suas atividades diárias 
 O programa deve considerar as aulas, o tempo para estudar, as atividades no abrigo e ainda reservar momentos para descanso e lazer. */
     
     public static void main(String[] args) {
-        // Solicita a Ana para digitar um número de 1 a 7 usando JOptionPane e guarda o valor em uma variável
+        // Solicita a Ana para digitar um número de 1 a 7, guardando o valor em uma variável
         String saidaDiaSemana = JOptionPane.showInputDialog("Oi, Ana! Digite o número de 1 a 7 para ver suas atividades do dia:");
-
+        
         // Converte o valor digitado para um número inteiro
         int numeroDiaSemana = Integer.parseInt(saidaDiaSemana);
 
@@ -19,7 +19,7 @@ O programa deve considerar as aulas, o tempo para estudar, as atividades no abri
         String atividadesDoDia = "";
         String atividadesDoProximoDia = "";
 
-        // Verifica o número da semana usando switch case
+        // Verifica o número da semana
         switch (numeroDiaSemana) {
             case 1:
                 atividadesDoDia = "Dia de descanso e lazer.";
@@ -55,7 +55,7 @@ O programa deve considerar as aulas, o tempo para estudar, as atividades no abri
                 break;
         }
 
-        // Exibe as atividades do dia e do próximo dia para Ana usando JOptionPane
+        // Exibe as atividades do dia e do próximo dia para Ana
         JOptionPane.showMessageDialog(null, "Atividades para o dia " + numeroDiaSemana + " da semana:\n" + atividadesDoDia
                 + "\n\nAtividades para o próximo dia:\n" + atividadesDoProximoDia);
     }
